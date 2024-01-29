@@ -1,0 +1,63 @@
+@import "/src/assets/styles/variable";
+
+.dashboard {
+  padding: 10px 10px 10px 210px;
+  .dashboard__bar {
+    width: 100%;
+
+    .dashboard__bar_body {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 200px;
+      background-color: $inputColor;
+      height: 100%;
+      padding: 10px 15px;
+
+      .dashboard__bar_logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 30px;
+        & img {
+          @include imageMin(contain);
+        }
+      }
+      .dashboard__bar_list {
+        color: $defaultColor;
+        & li {
+          margin: 7px 0px;
+        }
+        .active {
+          position: relative;
+          &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: black;
+            width: 3px;
+            height: 100%;
+          }
+        }
+        & svg {
+          margin-right: 7px;
+        }
+        .dashboard__bar_link {
+          @extend %listAdmin;
+        }
+      }
+      .dashboard__bar_button {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        background-color: black;
+        color: white;
+        font-size: 17px;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+    .dashboard__content {
+    }
+  }
+}

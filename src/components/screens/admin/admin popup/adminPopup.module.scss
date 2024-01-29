@@ -1,0 +1,84 @@
+@import "/src/assets/styles/variable";
+.invitationAdd {
+  .input__wrapper {
+    margin-top: 15px;
+    & label {
+      @extend %textBig;
+      display: block;
+    }
+    .input {
+      &.min {
+        width: 30%;
+      }
+      display: block;
+      margin-top: 10px;
+      background-color: $inputColor;
+      border: 2px solid transparent;
+      color: $defaultColor;
+      font-size: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 0.7rem;
+      outline: none;
+      width: 100%;
+      transition: border 0.5s ease-in-out 0s;
+      &:focus {
+        border: 2px solid $defaultColor;
+      }
+
+      &::placeholder {
+        color: #252525;
+      }
+    }
+
+    & span {
+      color: #fb401f;
+      font-size: 1rem;
+    }
+  }
+  .invitationAdd__textarea {
+    & label {
+      @extend %textBig;
+      display: block;
+    }
+    & textarea {
+      width: 100%;
+      display: block;
+      resize: vertical;
+      margin-top: 10px;
+      background-color: $inputColor;
+      border: 2px solid transparent;
+      color: $defaultColor;
+      font-size: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 0.7rem;
+      outline: none;
+      width: 100%;
+      transition: border 0.5s ease-in-out 0s;
+      &:focus {
+        border: 2px solid $defaultColor;
+      }
+
+      &::placeholder {
+        color: #252525;
+      }
+    }
+  }
+  .invitationAdd__image {
+    & label {
+      @extend %textBig;
+      display: block;
+    }
+    & input {
+      margin-top: 7px;
+      @extend %textBig;
+      display: block;
+    }
+  }
+  .create__button {
+    margin-top: 30px;
+    @extend %defaultButton;
+    color: #fff;
+  }
+}

@@ -1,0 +1,98 @@
+@import "/src/assets/styles/variable";
+
+.card {
+  width: 100%;
+  margin-top: 140px;
+  @media (max-width: 1018px) {
+    padding: 0px 15px;
+  }
+  .card__container {
+    .card__row {
+      display: flex;
+      @media (max-width: 798px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .card__column {
+        min-width: 0;
+        &:first-child {
+          flex: 0 1 40%;
+          margin-right: 30px;
+          @media (max-width: 798px) {
+            flex: 0 1 70%;
+            margin-right: 0px;
+            margin-bottom: 20px;
+          }
+          @media (max-width: 643px) {
+            flex: 1 1 100%;
+          }
+        }
+        flex: 0 1 50%;
+        @media (max-width: 798px) {
+          flex: 1 1 100%;
+        }
+        .card__heading {
+          @extend %secondHeading;
+        }
+        .card__orders {
+          @extend %fourthHeading;
+          font-weight: 400;
+        }
+        .card__quantity {
+          margin-top: 20px;
+          & p {
+            @extend %fourthHeading;
+            font-weight: 400;
+          }
+          .card__quantity_info {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            & p {
+              color: green;
+            }
+          }
+          .card__min_order {
+            @extend %textBig;
+          }
+        }
+
+        .card__price {
+          margin-top: 20px;
+          & p {
+            @extend %fourthHeading;
+          }
+        }
+        .card__buy_basket {
+          margin-top: 15px;
+          display: flex;
+          @media (max-width: 431px) {
+            flex-direction: column;
+          }
+          & button {
+            @include transparentButton($defaultColor, $defaultColor, #ffffff);
+            margin-right: 15px;
+            @media (max-width: 431px) {
+              margin-right: 0;
+              margin-bottom: 20px;
+            }
+            &:last-child {
+              margin-right: 0px;
+              margin-bottom: 0px;
+              position: relative;
+            }
+          }
+        }
+      }
+    }
+    .card__description {
+      margin-top: 50px;
+      & p {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 24px;
+        color: $opacityColor;
+      }
+    }
+  }
+}

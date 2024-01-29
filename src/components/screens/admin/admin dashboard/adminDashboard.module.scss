@@ -1,0 +1,59 @@
+@import "/src/assets/styles/variable";
+
+.dashboard__row {
+  width: 100%;
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  justify-content: space-between;
+  border: 1px solid $defaultColor;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-right: 15px;
+  &.edit {
+    padding: 10px 15px;
+  }
+  &:last-child {
+    margin-bottom: 0px;
+  }
+  .dashboard__image {
+    display: flex;
+    flex: 0 1 20%;
+    height: 160px;
+    align-items: center;
+    & img {
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    & p {
+      width: 50%;
+      font-size: 16px;
+      line-height: 22px;
+      margin-left: 15px;
+    }
+  }
+  .dashboard__time {
+    flex: 0 1 14%;
+    font-size: 16px;
+  }
+  .dashboard__button {
+    flex: 0 1 13%;
+    @include transparentButton($defaultColor, $defaultColor, #ffffff);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-right: 10px;
+    & svg {
+      vertical-align: middle;
+    }
+    &.delete {
+      margin-right: 0px;
+      border: none;
+      background-color: rgb(192, 1, 1);
+      color: #fff;
+    }
+  }
+}

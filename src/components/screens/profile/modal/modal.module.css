@@ -1,0 +1,118 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #202020c5;
+  z-index: 5;
+  padding: 50px 0px 0px 0px;
+}
+
+.modalDetail__container {
+  max-width: 700px;
+  height: 90%;
+  margin: 0px auto;
+  background-color: #a1a1a1;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.modalDetail__info {
+  background-color: #e9e9ed;
+  padding: 5px;
+  border-radius: 10px;
+  line-height: 28px;
+  margin: 0px 0px 20px 0px;
+}
+
+.modalDetailI__column {
+}
+
+.modalDetail__itemInfoDate {
+}
+
+.modalDetail__itemInfoFamly {
+}
+
+.modalDetail__itemInfoRestorant {
+}
+
+.modalDetail__itemInfoRestorant {
+}
+
+.modalDetail__prepayment {
+}
+
+.modalDetail__neeed {
+}
+
+.modalDetail__price {
+}
+
+.modalDetail__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px -10px;
+}
+
+.modalDetail__column {
+  flex: 0 1 50%;
+  padding: 10px 10px;
+}
+
+.modalDetail__item {
+}
+
+.modalDetail__img {
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0px 0px;
+  overflow: hidden;
+}
+
+.modalDetail__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.modalDetail__body {
+  padding: 8px;
+  background-color: #e9e9ed;
+  border-radius: 0px 0px 10px 10px;
+  line-height: 28px;
+}
+
+.modalDetail__info {
+}
+
+.modalDetail__rowNameP {
+}
+
+.modalDetail__rowQunaty {
+}
+
+.modalDetail__rowQunaty {
+}
+
+.modalDetail__itemInfoColumn {
+}
+
+.comment__user {
+}
+
+.modalDetail__rowPrice {
+}
+
+@media (max-width: 425px) {
+  .modalDetail__column {
+    flex: 1 1 auto;
+  }
+
+  .modal {
+    padding: 50px 10px 0px 10px;
+  }
+}

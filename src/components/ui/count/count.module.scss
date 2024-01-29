@@ -1,0 +1,32 @@
+@import "/src/assets/styles/variable";
+.card__quantity_input {
+  display: flex;
+  width: 120px;
+  background-color: #cfcfcf;
+  border: 2px solid #cfcfcf;
+  padding: 10px;
+  transition: border 0.5s ease-in-out 0s;
+  &.active {
+    border: 2px solid $defaultColor;
+  }
+  &.error {
+    border: 2px solid $errorColor;
+  }
+  &.margin {
+    margin-right: 20px;
+  }
+  & input {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: $defaultColor;
+    background-color: #cfcfcf;
+    font-size: 18px;
+    text-align: center;
+  }
+  & button {
+    font-size: 18px;
+    color: $defaultColor;
+    line-height: 0px;
+  }
+}

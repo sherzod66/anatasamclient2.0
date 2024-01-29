@@ -1,0 +1,36 @@
+@import "/src/assets/styles/variable";
+.catalog__list {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background-color: #ebebeb;
+  z-index: 3;
+  padding: 15px 15px 100px 15px;
+  animation: show 0.5s ease-in-out 1 normal 0s forwards;
+  box-shadow: 0px 0px 10px #00000071;
+  & li {
+    padding: 10px 0px;
+    @extend %textBig;
+    border-bottom: 1px solid $backgroundHover;
+    .catalog__link {
+      color: $backgroundHover;
+      & svg {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+    &:last-child {
+      border-bottom: 0px solid $backgroundHover;
+    }
+  }
+}
+
+@keyframes show {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}

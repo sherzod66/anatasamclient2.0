@@ -1,0 +1,38 @@
+@import "/src/assets/styles/variable";
+.empty {
+  margin-top: 90px;
+  width: 100%;
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .empty__body {
+    text-align: center;
+    .empty__icon {
+      font-size: 80px;
+      margin-top: 12px;
+      color: $opacityColor;
+    }
+    .empty__choice {
+      @extend %textBig;
+      margin-top: 10px;
+    }
+    & button {
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 250px;
+      @extend %defaultButton;
+      padding: 0px 0px 0px 0px;
+      margin-top: 17px;
+      & a {
+        display: block;
+        padding: 15px 0px;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+      }
+    }
+  }
+}

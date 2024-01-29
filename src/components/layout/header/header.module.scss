@@ -1,0 +1,111 @@
+@import "/src/assets/styles/variable";
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15px 0px;
+  z-index: 5;
+  background-color: #fff;
+  @media (max-width: 1024px) {
+    padding: 15px 15px;
+  }
+  .header__container {
+    .header__row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      @media (max-width: 798px) {
+        justify-content: space-between;
+      }
+      .header__logo {
+        display: block;
+        width: 220px;
+        height: 60px;
+        margin-right: 100px;
+        @media (max-width: 874px) {
+          margin-right: 50px;
+        }
+        @media (max-width: 431px) {
+          width: 60px;
+          height: 60px;
+        }
+        & img {
+          @include imageMin(contain);
+        }
+      }
+      .header__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        @media (max-width: 798px) {
+          width: auto;
+          justify-content: flex-start;
+          align-items: stretch;
+        }
+        .header__info {
+          & a {
+            @extend %textBig;
+            font-weight: 500;
+            @media (max-width: 452px) {
+              font-size: 16px;
+              line-height: 25px;
+            }
+          }
+          & p {
+            @extend %textSmall;
+            color: $opacityColor;
+            @media (max-width: 452px) {
+              font-size: 12px;
+            }
+          }
+        }
+        .header__list {
+          @media (max-width: 798px) {
+            display: none;
+          }
+          display: flex;
+          font-size: 18px;
+          font-weight: 500;
+          & li {
+            position: relative;
+            text-align: center;
+            margin-right: 50px;
+            transition: color 0.5s ease-in-out 0s;
+            .header__link {
+              color: $opacityColor;
+              transition: color 0.5s ease-in-out 0s;
+              &:hover {
+                color: $defaultColor;
+              }
+              &.active {
+                color: $activeColor;
+              }
+            }
+            &:hover {
+              color: $defaultColor;
+            }
+            &:last-child {
+              margin-right: 0px;
+            }
+            &:first-child {
+              cursor: pointer;
+            }
+            & span {
+              display: block;
+              position: absolute;
+              background-color: $opacityColor;
+              right: 15px;
+              top: -7px;
+              color: #fff;
+              border-radius: 7px;
+              font-size: 12px;
+              padding: 3px 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

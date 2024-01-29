@@ -1,0 +1,74 @@
+@import '/src/assets/styles/variable';
+.ticket {
+	width: 100%;
+	.ticket__container {
+		max-width: 700px;
+		padding: 50px 0px 0px 0px;
+		.ticket__body {
+			background-color: #ffffff;
+			padding: 15px;
+			.ticket__title {
+				text-align: center;
+				font-size: 18px;
+				font-weight: 700;
+			}
+			.ticket__row {
+				display: flex;
+				margin: 10px 0px 0px 0px;
+				.ticket__column {
+					flex: 1 1 100%;
+					font-size: 16px;
+					line-height: 24px;
+					margin: 0px 10px 0px 0px;
+					.flex {
+						display: flex;
+						justify-content: space-between;
+						& p {
+							margin: 0px 10px 0px 0px;
+						}
+						& p:last-child {
+							margin: 0px 0px 0px 0px;
+						}
+					}
+					.cardTable {
+						border-left: 2px solid #afafaf;
+						border-right: 2px solid #afafaf;
+						border-bottom: 1px solid #afafaf;
+						border-top: 2px solid #afafaf;
+						position: relative;
+						.lis__row {
+							display: flex;
+							list-style-type: none;
+							& li {
+								flex: 0 0 16.666%;
+								text-align: center;
+								border-right: 1px solid #afafaf;
+								border-bottom: 1px solid #afafaf;
+								word-wrap: break-word;
+								overflow: hidden;
+							}
+							& li:last-child {
+								border-right: 0px solid #afafaf;
+							}
+						}
+						.cardInfo__row {
+							display: flex;
+							list-style-type: none;
+							& li {
+								flex: 0 0 16.666%;
+								text-align: center;
+								border-right: 1px solid #afafaf;
+								border-bottom: 1px solid #afafaf;
+								word-wrap: break-word;
+								overflow: hidden;
+							}
+							& li:last-child {
+								border-right: 0px solid #afafaf;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

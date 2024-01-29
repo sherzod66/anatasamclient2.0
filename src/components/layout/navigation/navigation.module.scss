@@ -1,0 +1,101 @@
+@import "/src/assets/styles/variable";
+.navigation {
+  display: none;
+  @media (max-width: 798px) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 15px;
+    @media (max-width: 361px) {
+      padding: 7px;
+    }
+    box-shadow: 0px 0px 5px $opacityColor;
+    z-index: 5;
+  }
+  .navigation__button {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    color: $opacityColor;
+    @media (max-width: 361px) {
+      font-size: 16px;
+    }
+    .navigation__link {
+      color: $opacityColor;
+      &.active {
+        color: $activeColor;
+      }
+    }
+    .counter {
+      display: block;
+      position: absolute;
+      background-color: $opacityColor;
+      right: 15px;
+      top: -7px;
+      color: #fff;
+      border-radius: 7px;
+      font-size: 12px;
+      padding: 3px 5px;
+    }
+    .navigation_hamburger {
+      position: relative;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+      height: 18px;
+      width: 20px;
+      z-index: 4;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $opacityColor;
+        transition: all 0.5s ease 0s;
+      }
+
+      &::before {
+        top: 0px;
+      }
+      &::after {
+        bottom: 0px;
+      }
+
+      &.active::before {
+        top: 9px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+      &.active::after {
+        top: 9px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
+
+      & span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0px, -50%);
+        width: 80%;
+        height: 2px;
+        background-color: $opacityColor;
+        transition: all 0.5s ease 0s;
+      }
+      &.active span {
+        opacity: 0;
+        left: -60px;
+      }
+    }
+  }
+}

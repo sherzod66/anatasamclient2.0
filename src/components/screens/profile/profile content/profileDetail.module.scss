@@ -1,0 +1,137 @@
+@import '/src/assets/styles/variable';
+.profile {
+	width: 100%;
+	@media (max-width: 1024px) {
+		padding: 0px 15px;
+	}
+	margin-top: 120px;
+	.profile__container {
+		.profile__header {
+			display: flex;
+			align-items: center;
+			.profile__user_image {
+				width: 100px;
+				height: 100px;
+				& img {
+					@include imageMin(contain);
+				}
+				margin-right: 20px;
+			}
+			& h5 {
+				color: $opacityColor;
+			}
+			.change__user_name {
+				margin-left: 20px;
+				display: flex;
+			}
+		}
+		.profile__list {
+			margin-top: 50px;
+			@extend %textBig;
+			& li {
+				padding: 10px 0px 0px 0px;
+				border-top: 1px solid $opacityColor;
+				& span:nth-child(2) {
+					float: right;
+				}
+			}
+			.profile__orders {
+				margin-top: 10px;
+				display: flex;
+				overflow-x: auto;
+				overflow-y: hidden;
+				.orders__item {
+					flex: 0 0 25%;
+					@media (max-width: 1024px) {
+						flex: 0 0 30%;
+					}
+					@media (max-width: 768px) {
+						flex: 0 0 50%;
+					}
+					@media (max-width: 435px) {
+						flex: 0 0 70%;
+					}
+					@media (max-width: 390px) {
+						flex: 0 0 90%;
+					}
+					background-color: $inputColor;
+					color: #000000;
+					text-decoration: none;
+					margin: 0px 10px 0px 0px;
+					border-radius: 20px;
+					&:last-child {
+						margin: 0px 0px 0px 0px;
+					}
+					.orders__row {
+						display: flex;
+						padding: 10px;
+						height: 200px;
+						flex-wrap: wrap;
+						overflow: hidden;
+						margin: -5px -5px;
+						.oredr__column {
+							padding: 5px 5px;
+							flex: 0 1 50%;
+							height: calc(100% / 2);
+							.orders__img {
+								display: block;
+								height: 100%;
+								border-radius: 10px;
+								overflow: hidden;
+								& img {
+									@include imageMin(cover);
+								}
+							}
+						}
+					}
+					.orders__body {
+						padding: 10px 10px;
+						.orders__ordersD {
+							font-size: 18px;
+							font-weight: 400;
+							margin-top: 10px;
+						}
+						.orders__status {
+							display: inline-block;
+							border-radius: 10px;
+							color: #222;
+							background-color: #fff;
+							padding: 5px;
+							font-size: 16px;
+							font-weight: 400;
+							margin-top: 10px;
+							font-weight: 600;
+						}
+						.orders__number {
+							display: block;
+							font-size: 16px;
+							font-weight: 400;
+							margin-top: 10px;
+						}
+						.orders__price {
+							display: inline-block;
+							border-radius: 10px;
+							color: #ffffff;
+							background-color: green;
+							padding: 5px;
+							font-size: 16px;
+							margin-top: 10px;
+							margin-right: 50px;
+						}
+						.orders__detail {
+						}
+					}
+				}
+			}
+		}
+		.profile__logout {
+			margin-top: 50px;
+			color: #fff;
+			@extend %defaultButton;
+			width: 300px;
+			@media (max-width: 768px) {
+				width: 100%;
+			}
+		}
+	}
+}
