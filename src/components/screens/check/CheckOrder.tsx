@@ -5,8 +5,8 @@ import { checkRead } from '@/config/localStorage.helper'
 import CheckDetail from '@/components/screens/check/CheckDetail'
 
 import { FC } from 'react'
-import NotFound from '@/app/[locale]/not-found'
 import { IOrderInfo } from '@/types/invitationInfo.type'
+import NotFound from '@/app/not-found'
 
 const CheckOrder: FC = () => {
 	const [checkData, setCheckData] = useState<IOrderInfo | null>(null)
