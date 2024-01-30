@@ -1,1 +1,8 @@
-@import "/src/assets/styles/variable";
+@import '/src/assets/styles/variable';
+
+.report__line {
+	width: 100%;
+	height: 2px;
+	background-color: $defaultColor;
+	margin: 15px 0px;
+}
