@@ -4,16 +4,18 @@ import styles from './header.module.scss'
 import { LuSearch, LuShoppingBag } from 'react-icons/lu'
 import { FaRegUser } from 'react-icons/fa'
 import Link from 'next/link'
-import HeaderLang from './lang/HeaderLang'
 import cn from 'clsx'
 import { usePathname } from 'next/navigation'
 import { useAuth } from '@/hooks/useAuth'
 import { useGetBasketQuery } from '@/lib/api/basket.api'
+import { useTranslation } from 'react-i18next'
+import HeaderLang from './lang/HeaderLang'
 
 const Header: FC = () => {
 	const pathname = usePathname()
 	const auth = useAuth()
 	const { data } = useGetBasketQuery(auth.token)
+	const { t } = useTranslation()
 	return (
 		<>
 			<header className={styles.header}>
@@ -38,7 +40,7 @@ const Header: FC = () => {
 										})}
 										href={'/search'}
 									>
-										<LuSearch /> <p>Поиск</p>
+										<LuSearch /> <p>{t('search')}</p>
 									</Link>
 								</li>
 								<li>
@@ -48,7 +50,7 @@ const Header: FC = () => {
 										})}
 										href={'/basket'}
 									>
-										<LuShoppingBag /> <p>Корзина</p>
+										<LuShoppingBag /> <p>{t('basket')}</p>
 									</Link>
 									<span>{data ? data.length : 0}</span>
 								</li>
@@ -59,7 +61,7 @@ const Header: FC = () => {
 										})}
 										href={auth.isAdmin ? '/manager' : '/profile'}
 									>
-										<FaRegUser /> <p>{auth.isAdmin ? 'Админ' : 'Профиль'}</p>
+										<FaRegUser /> <p>{auth.isAdmin ? t('admin') : t('profile')}</p>
 									</Link>
 								</li>
 							</ul>

@@ -61,7 +61,7 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 				{data.invitationInfo ? (
 					<div id='info' className={styles.order__itemInfo}>
 						<div className={styles.order__itemInfoColumn}>
-							<div className={styles.order__itemInfoDate}>
+							<div title='Время заказа' className={styles.order__itemInfoDate}>
 								Order time: {GetData(+data.createdAt)}
 							</div>
 							<div id='status' className={styles.order__status}>
@@ -73,17 +73,19 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 								onChange={value => changeStatus(value, data.id)}
 								placeholder='Select sorting'
 								options={[
-									{ value: 'PENDING', label: 'PENDING' },
-									{ value: 'IN_PROGRESS', label: 'IN PROGRESS' },
-									{ value: 'CAN_BE_PICKED_UP', label: 'CAN BE PICKED UP' },
-									{ value: 'TOOK', label: 'TOOK' }
+									{ value: 'PENDING', label: 'PENDING', title: 'В ожидании' },
+									{ value: 'IN_PROGRESS', label: 'IN PROGRESS', title: 'В процессе' },
+									{ value: 'CAN_BE_PICKED_UP', label: 'CAN BE PICKED UP', title: 'Можно забирать' },
+									{ value: 'TOOK', label: 'TOOK', title: 'Забрал' }
 								]}
 							/>
-							<div className={styles.order__prepayment}>Paid: {formatPrice(data.paid)} Sum</div>
-							<div className={styles.order__need}>
+							<div title='Оплачено' className={styles.order__prepayment}>
+								Paid: {formatPrice(data.paid)} Sum
+							</div>
+							<div title='Нужно оплатить' className={styles.order__need}>
 								NeedPaid: {formatPrice(data.orderPrice - data.paid)} Sum
 							</div>
-							<div className={styles.order__price}>
+							<div title='Полная стоимость заказа' className={styles.order__price}>
 								Total amount: {formatPrice(data.orderPrice)} Sum
 							</div>
 						</div>
@@ -135,30 +137,30 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 										/>
 									</div>
 									<div className={styles.order__info}>
-										<div className={styles.order__rowNameP}>
+										<div title='Виновники торжества' className={styles.order__rowNameP}>
 											<strong>Bride and groom: </strong> {item.luckyOnes}
 										</div>
-										<div className={styles.order__restaurant}>
+										<div title='Ресторан' className={styles.order__restaurant}>
 											<strong>Restaurant: </strong> {item.restaurant}
 										</div>
-										<div className={styles.order__famly}>
+										<div title='С уважением семьи' className={styles.order__famly}>
 											<strong>Family :</strong> {item.family}
 										</div>
-										<div className={styles.order__rowQuantity}>
+										<div title='Количество' className={styles.order__rowQuantity}>
 											<strong>Quantity: </strong> {item.quantity}
 										</div>
-										<div className={styles.order__rowQunaty}>
+										<div title='Время и дата' className={styles.order__rowQunaty}>
 											<strong>Date :</strong> {item.date} в {item.time}
 										</div>
-										<div className={styles.order__rowQunaty}>
+										<div title='Язык пригласительной' className={styles.order__rowQunaty}>
 											<strong>Lang:</strong> {item.lang}
 										</div>
-										<div className={styles.order__itemInfoColumn}>
+										<div title='Коментарий' className={styles.order__itemInfoColumn}>
 											<div className={styles.comment__user}>
 												<strong>comment: </strong> <p>{item.comment}</p>
 											</div>
 										</div>
-										<div className={styles.order__rowPrice}>
+										<div title='Стоимость пригласительной' className={styles.order__rowPrice}>
 											<strong>Price:</strong> {formatPrice(item.cardPrice)} Sum
 										</div>
 									</div>

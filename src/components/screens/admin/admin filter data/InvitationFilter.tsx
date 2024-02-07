@@ -38,8 +38,8 @@ const InvitationFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
 					onChange={handleChangeOrder}
 					placeholder='Select sorting'
 					options={[
-						{ value: 'more_sales', label: 'More sales' },
-						{ value: 'less_sales', label: 'Less sales' }
+						{ value: 'more_sales', label: 'More sales', title: 'Больше продано' },
+						{ value: 'less_sales', label: 'Less sales', title: 'Меньше продано' }
 					]}
 				/>
 			</div>

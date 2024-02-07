@@ -1,6 +1,6 @@
 import { useGetBasketQuery } from '@/lib/api/basket.api'
 import { IInvitationInfo, IOrderInfo } from '@/types/invitationInfo.type'
-import { FormEvent, use, useEffect, useMemo, useState } from 'react'
+import { FormEvent, useEffect, useMemo, useState } from 'react'
 import { orderBasketValidation, refactorQueryData } from './refactorQueryData'
 import { useGetUserQuery } from '@/lib/api/api'
 import { getAllLocal, removeLocalBasket } from '@/config/localStorage.helper'
@@ -11,10 +11,12 @@ import { openNotification } from '@/components/ui/alerts/notification'
 import { notification } from 'antd'
 import { useRouter } from 'next/navigation'
 import { useActions } from '@/hooks/useActions'
+import { useTranslation } from 'react-i18next'
 
 export const useOrderBasketInfo = () => {
 	const { data, isLoading } = useGetBasketQuery(undefined)
 	const { push } = useRouter()
+	const { t } = useTranslation()
 	const { data: user } = useGetUserQuery(undefined)
 	const [createOrder, { isLoading: handelLoading, data: response }] = useCreateOrderMutation()
 	const [api, contextHolder] = notification.useNotification()
@@ -69,7 +71,7 @@ export const useOrderBasketInfo = () => {
 			}
 			//console.log(handelMultiMutationData(invitationInfo, paymentInfo));
 		} else {
-			openNotification('top', api)
+			openNotification('top', api, t('order_notification_m'), t('order_notification_d'))
 		}
 	}
 	return useMemo(
@@ -84,7 +86,8 @@ export const useOrderBasketInfo = () => {
 			response,
 			contextHolder,
 			handelSubmitForm,
-			handelLoading
+			handelLoading,
+			t
 		}),
 		[data, invitationInfo, paymentInfo, user, api, response, handelLoading]
 	)

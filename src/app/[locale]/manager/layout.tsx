@@ -4,7 +4,7 @@ import styles from './adminLayout.module.scss'
 import Link from 'next/link'
 import { removeToken } from '@/lib/api/api helper/apiCookies.helper'
 import { useActions } from '@/hooks/useActions'
-import NotFound from '../not-found'
+import NotFound from '../../not-found'
 import { dashboardBarList } from '@/assets/dashboard/dashboardList'
 import { useParams } from 'next/navigation'
 import { useGetUserQuery } from '@/lib/api/api'
@@ -32,7 +32,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 												key={element.link}
 											>
 												{<element.icon className='' />}
-												<Link className={styles.dashboard__bar_link} href={element.link}>
+												<Link
+													title={element.translateTitle}
+													className={styles.dashboard__bar_link}
+													href={element.link}
+												>
 													{element.title}
 												</Link>
 											</li>

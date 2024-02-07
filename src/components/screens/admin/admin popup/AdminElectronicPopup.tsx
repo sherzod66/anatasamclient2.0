@@ -37,7 +37,9 @@ const AdminElectronicPopup: FC = () => {
 			{fileLoading && <Loader />}
 			<form onSubmit={handleSubmit(onSubmit)} className={styles.invitationAdd}>
 				<div className={styles.input__wrapper}>
-					<label htmlFor='name'>Electronic name</label>
+					<label title='Имя электронной пригласительной' htmlFor='name'>
+						Electronic name
+					</label>
 					<input
 						{...register('name', {
 							required: 'Enter electronic name'
@@ -50,7 +52,9 @@ const AdminElectronicPopup: FC = () => {
 					<span>{errors.name?.message}</span>
 				</div>
 				<div className={styles.input__wrapper}>
-					<label htmlFor='price'>Electronic name</label>
+					<label title='Цена электроника' htmlFor='price'>
+						Electronic price
+					</label>
 					<input
 						{...register('price', {
 							required: 'Enter electronic price'
@@ -63,7 +67,9 @@ const AdminElectronicPopup: FC = () => {
 					<span>{errors.price?.message}</span>
 				</div>
 				<div className={styles.input__wrapper}>
-					<label htmlFor='shelfLife'>Shelf life</label>
+					<label title='До кокого числа срок жизни электроника' htmlFor='shelfLife'>
+						Shelf life
+					</label>
 					<input
 						{...register('shelfLife', {
 							required: 'Enter storage period'

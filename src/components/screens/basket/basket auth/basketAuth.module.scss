@@ -1,25 +1,24 @@
-@import "/src/assets/styles/variable";
+@import '/src/assets/styles/variable';
 .basketAuth {
-  margin-top: 120px;
-  @media (max-width: 768px) {
-    margin-top: 70px;
-    padding: 0px 15px;
-  }
-  .basketAuth__body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    & h2 {
-      @media (max-width: 768px) {
-        text-align: center;
-      }
-    }
-    .basketAuth__button {
-      margin-top: 30px;
-      width: 250px;
-      color: #ffff;
-      @extend %defaultButton;
-    }
-  }
+	margin-top: 120px;
+	@media (max-width: 768px) {
+		padding: 0px 15px;
+	}
+	.basketAuth__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		& h2 {
+			@media (max-width: 768px) {
+				text-align: center;
+			}
+		}
+		.basketAuth__button {
+			margin-top: 30px;
+			width: 250px;
+			color: #ffff;
+			@extend %defaultButton;
+		}
+	}
 }

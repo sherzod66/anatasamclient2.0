@@ -21,7 +21,8 @@ const OrderBasket: FC = () => {
 		user,
 		contextHolder,
 		handelSubmitForm,
-		handelLoading
+		handelLoading,
+		t
 	} = useOrderBasketInfo()
 
 	return (
@@ -35,14 +36,18 @@ const OrderBasket: FC = () => {
 						{invitationInfo.map((info, index) => (
 							<div key={info.cardId} className={styles.writeOrder__column}>
 								<div className={styles.writeOrder__item}>
-									<h2>Выбранное пригласительное</h2>
+									<h2>{t('checked_card')}</h2>
 									<div className={styles.writeOrder__image}>
 										<img src={imageLik(info.cardImage[0])} alt={'image not found'} />
 									</div>
-									<h4>Стоимость одной шт: {formatPrice(info.cardPrice)}</h4>
-									<h2>Количество: {info.quantity}</h2>
+									<h4>
+										{t('one_price')}: {formatPrice(info.cardPrice)}
+									</h4>
+									<h2>
+										{t('quantity')}: {info.quantity}
+									</h2>
 									<div className={styles.writeOrder__lang}>
-										<p>Язык пригласительной:</p>
+										<p>{t('lang')}:</p>
 										<span>
 											<input
 												id='lang-id'
@@ -81,7 +86,7 @@ const OrderBasket: FC = () => {
 											EN
 										</span>
 									</div>
-									<label htmlFor={`${info.cardId}-name`}>Виновники торжества</label>
+									<label htmlFor={`${info.cardId}-name`}>{t('luckyOnes')}</label>
 									<input
 										className={styles.writeOrder__input}
 										id={`${info.cardId}-name`}
@@ -93,7 +98,7 @@ const OrderBasket: FC = () => {
 										type='text'
 										name='name'
 									/>
-									<label htmlFor={`${info.cardId}-date`}>Дата и время церемонии</label>
+									<label htmlFor={`${info.cardId}-date`}>{t('time_and_date')}</label>
 									<div className={styles.writeOrder__data}>
 										<p>
 											<input
@@ -107,7 +112,7 @@ const OrderBasket: FC = () => {
 											/>
 										</p>
 										<p>
-											<label htmlFor={`${info.cardId}-time`}>Время</label>
+											<label htmlFor={`${info.cardId}-time`}>{t('time')}</label>
 											<input
 												id={`${info.cardId}-time`}
 												placeholder='18:00'
@@ -121,7 +126,7 @@ const OrderBasket: FC = () => {
 											/>
 										</p>
 									</div>
-									<label htmlFor={`${info.cardId}-restaurant`}>Название Ресторана</label>
+									<label htmlFor={`${info.cardId}-restaurant`}>{t('restaurant')}</label>
 									<input
 										id={`${info.cardId}-restaurant`}
 										type='text'
@@ -131,7 +136,7 @@ const OrderBasket: FC = () => {
 										className={styles.writeOrder__input}
 									/>
 
-									<label htmlFor={`${info.cardId}-family`}>С уважением семьи</label>
+									<label htmlFor={`${info.cardId}-family`}>{t('family')}</label>
 									<input
 										id={`${info.cardId}-family`}
 										type='text'
@@ -142,7 +147,7 @@ const OrderBasket: FC = () => {
 										name='family'
 										className={styles.writeOrder__input}
 									/>
-									<label htmlFor={`${info.cardId}-comment`}>Комментарий</label>
+									<label htmlFor={`${info.cardId}-comment`}>{t('comment')}</label>
 									<textarea
 										className={styles.writeOrder__textarea}
 										placeholder='Пригласительное должно быть готово уже через 2 дня'
@@ -159,7 +164,7 @@ const OrderBasket: FC = () => {
 					</div>
 					<div className={styles.writeOrder__result}>
 						<div className={styles.writeOrder__payment_method}>
-							<label htmlFor='payment-method'>Способ оплаты:</label>
+							<label htmlFor='payment-method'>{t('payment_method')}:</label>
 							<select
 								onChange={e =>
 									setPaymentInfo(prev => ({
@@ -205,23 +210,42 @@ const OrderBasket: FC = () => {
 									onChange={e =>
 										setPaymentInfo(prev => ({
 											...prev,
+											orderPrice: +e.target.value
+										}))
+									}
+									placeholder='Order price'
+									value={paymentInfo.orderPrice}
+									type='text'
+									className={styles.writeOrder__input}
+								/>
+								<input
+									onChange={e =>
+										setPaymentInfo(prev => ({
+											...prev,
 											paid: +e.target.value
 										}))
 									}
 									placeholder='Paid'
-									type='number'
+									type='text'
 									className={styles.writeOrder__input}
 								/>
-								<button type='button' onClick={() => checkWriteMulti(invitationInfo, paymentInfo)}>
+								<button
+									className={styles.check__button}
+									type='button'
+									onClick={() => checkWriteMulti(invitationInfo, paymentInfo)}
+								>
 									<FaFileCircleCheck />
 								</button>
 							</div>
 						)}
 						<p className={styles.writeOrder__result_price}>
-							Итого: <span>{formatPrice(paymentInfo.orderPrice)}</span>
+							{t('total')}:{' '}
+							<span>
+								{formatPrice(paymentInfo.orderPrice)} {t('sum')}
+							</span>
 						</p>
 						<button type='submit' className={styles.writeOrder__button}>
-							Заказать
+							{t('orders')}
 						</button>
 					</div>
 				</form>

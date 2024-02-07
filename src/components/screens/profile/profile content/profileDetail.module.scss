@@ -9,6 +9,15 @@
 		.profile__header {
 			display: flex;
 			align-items: center;
+			@media (max-width: 768px) {
+				flex-wrap: wrap;
+			}
+			.change__user_name {
+				@media (max-width: 768px) {
+					flex: 1 1 100%;
+					margin-top: 20px;
+				}
+			}
 			.profile__user_image {
 				width: 100px;
 				height: 100px;
@@ -36,7 +45,7 @@
 				}
 			}
 			.profile__orders {
-				margin-top: 10px;
+				margin: 10px 0px;
 				display: flex;
 				overflow-x: auto;
 				overflow-y: hidden;

@@ -1,85 +1,79 @@
-@import "/src/assets/styles/variable";
+@import '/src/assets/styles/variable';
 .header__lang {
-  @media (max-width: 798px) {
-    display: none;
-  }
-  position: relative;
-  z-index: 3;
-  font-size: 18px;
-  z-index: 1;
-  color: #ffffff;
-  .choose__lang {
-    & p {
-      background-color: $backgroundPressed;
-      padding: 5px;
-      cursor: pointer;
-    }
-    &.ru p::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 15px;
-      background: url("/r.png") 0 0 / cover no-repeat;
-      margin-right: 10px;
-    }
-    &.uz p::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 15px;
-      background: url("/uz.png") 0 0 / cover no-repeat;
-      margin-right: 10px;
-    }
-    & .icon {
-      vertical-align: middle;
-    }
-    .choose__lang_list {
-      position: absolute;
-      width: 100%;
-      left: 0;
-      top: 50px;
-      z-index: 1;
-      list-style-type: none;
-      background-color: #f8796a;
-      padding: 5px;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.5s ease 0s;
+	@media (max-width: 798px) {
+		display: none;
+	}
+	position: relative;
+	z-index: 3;
+	font-size: 18px;
+	z-index: 1;
+	color: #ffffff;
+	.choose__lang {
+		& p {
+			background-color: $backgroundPressed;
+			padding: 5px;
+			cursor: pointer;
+		}
+		&.ru p::before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 15px;
+			background: url('/r.png') 0 0 / cover no-repeat;
+			margin-right: 10px;
+		}
+		&.en p::before {
+			content: '';
+			display: inline-block;
+			width: 20px;
+			height: 15px;
+			background: url('/en.png') 0 0 / cover no-repeat;
+			margin-right: 10px;
+		}
+		& .icon {
+			vertical-align: middle;
+		}
+		.choose__lang_list {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: 50px;
+			z-index: 1;
+			list-style-type: none;
+			background-color: $inputColor;
+			padding: 5px;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s ease 0s;
+			color: #000000;
 
-      &.active {
-        top: 30px;
-        opacity: 1;
-        visibility: visible;
-        @media (max-width: 768px) {
-          top: 39px;
-        }
-      }
-      & p {
-        line-height: 28px;
-        cursor: pointer;
-        background-color: #f8796a;
-      }
-      & p:first-child::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 15px;
-        background: url("/r.png") 0 0 / cover no-repeat;
-      }
-      & p:nth-child(2)::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 15px;
-        background: url("/en.png") 0 0 / cover no-repeat;
-      }
-      & p:last-child::before {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 15px;
-        background: url("/uz.png") 0 0 / cover no-repeat;
-      }
-    }
-  }
+			&.active {
+				top: 30px;
+				opacity: 1;
+				visibility: visible;
+				@media (max-width: 768px) {
+					top: 39px;
+				}
+			}
+			& p {
+				line-height: 28px;
+				cursor: pointer;
+				background-color: $inputColor;
+			}
+			& p:first-child::before {
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 15px;
+				background: url('/r.png') 0 0 / cover no-repeat;
+			}
+			& p:last-child::before {
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 15px;
+				background: url('/en.png') 0 0 / cover no-repeat;
+			}
+		}
+	}
 }

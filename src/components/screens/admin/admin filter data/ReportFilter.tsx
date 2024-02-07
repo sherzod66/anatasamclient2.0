@@ -39,6 +39,11 @@ const ReportFilter: FC<TReportProps> = ({
 		const coincidence = copyOrder.filter(
 			order => filterData.first < +order.createdAt && filterData.second > +order.createdAt
 		)
+		const coincidenceCash = coincidence.filter(order => order.paymentMethod === 'CASH')
+		const coincidenceCard = coincidence.filter(
+			order => order.paymentMethod === 'HUMO' || order.paymentMethod === 'UZCARD'
+		)
+
 		const coincidenceElectronic = copyElectronic.filter(
 			electronic =>
 				filterData.first < +electronic.createdAt && filterData.second > +electronic.createdAt
@@ -48,7 +53,9 @@ const ReportFilter: FC<TReportProps> = ({
 			orderQuantity: coincidence.length,
 			totalAmount: countReportPrice(coincidence),
 			done: countReportMade(coincidence),
-			inProgress: countReportInProgress(coincidence)
+			inProgress: countReportInProgress(coincidence),
+			cash: countReportPrice(coincidenceCash),
+			electronicCard: countReportPrice(coincidenceCard)
 		}))
 		setElectronics(prev => ({
 			...prev,

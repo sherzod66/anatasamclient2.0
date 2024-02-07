@@ -61,7 +61,7 @@ export const ordersApi = apiSlice.injectEndpoints({
 					Authorization: `Bearer ${getToken()}`
 				}
 			}),
-			invalidatesTags: () => [{ type: 'Orders' }]
+			invalidatesTags: () => [{ type: 'Orders' }, { type: 'User' }]
 		})
 	})
 })

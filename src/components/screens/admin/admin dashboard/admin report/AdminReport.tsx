@@ -43,6 +43,24 @@ const AdminReport: FC = () => {
 									suffix='Sum'
 								/>
 							</Col>
+							<Col span={5}>
+								<Statistic
+									title='Cash'
+									value={orders.cash}
+									formatter={formatter}
+									decimalSeparator=' '
+									suffix='Sum'
+								/>
+							</Col>
+							<Col span={5}>
+								<Statistic
+									title='Electronic card'
+									value={orders.electronicCard}
+									formatter={formatter}
+									decimalSeparator=' '
+									suffix='Sum'
+								/>
+							</Col>
 						</Row>
 						<Row gutter={16}>
 							<Col span={5}>

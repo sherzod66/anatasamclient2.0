@@ -1,13 +1,15 @@
-import type { NotificationArgsProps } from "antd";
-import { NotificationInstance } from "antd/es/notification/interface";
-type NotificationPlacement = NotificationArgsProps["placement"];
+import type { NotificationArgsProps } from 'antd'
+import { NotificationInstance } from 'antd/es/notification/interface'
+type NotificationPlacement = NotificationArgsProps['placement']
 export const openNotification = (
-  placement: NotificationPlacement,
-  api: NotificationInstance
+	placement: NotificationPlacement,
+	api: NotificationInstance,
+	message: string,
+	description: string
 ) => {
-  api.info({
-    message: "Не все поля формы заполнены!",
-    description: "Пожалуйста заполните все поля формы",
-    placement,
-  });
-};
+	api.info({
+		message,
+		description,
+		placement
+	})
+}

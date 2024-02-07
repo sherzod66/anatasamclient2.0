@@ -39,9 +39,12 @@ const AdminInvitationPopup: FC = () => {
 					register={register}
 					rest={reset}
 					type='text'
+					title='Имя товара'
 				/>
 				<div className={styles.invitationAdd__textarea}>
-					<label htmlFor='description'>Description</label>
+					<label title='Описание' htmlFor='description'>
+						Description
+					</label>
 					<textarea
 						{...register('description', {
 							required: 'Брат описание кто будет писать?'
@@ -59,9 +62,12 @@ const AdminInvitationPopup: FC = () => {
 					register={register}
 					rest={reset}
 					type='number'
+					title='Количество товара'
 				/>
 				<div className={styles.input__wrapper}>
-					<label htmlFor='barcode'>Barcode</label>
+					<label title='Штрих код' htmlFor='barcode'>
+						Barcode
+					</label>
 					<input
 						id='barcode'
 						placeholder='Enter barcode'
@@ -75,6 +81,7 @@ const AdminInvitationPopup: FC = () => {
 				<Field
 					errors={errors}
 					name='minOrderQuantity'
+					title='Минимальное количество заказа'
 					options='Who indicate the minimum order quantity'
 					placeholder='Minimum quantity order'
 					register={register}
@@ -89,6 +96,7 @@ const AdminInvitationPopup: FC = () => {
 					register={register}
 					rest={reset}
 					type='number'
+					title='Себестоимость товара'
 				/>
 				<Field
 					errors={errors}
@@ -98,6 +106,7 @@ const AdminInvitationPopup: FC = () => {
 					register={register}
 					rest={reset}
 					type='number'
+					title='Цена'
 				/>
 				<div className={styles.invitationAdd__image}>
 					<label htmlFor='file'>Select image</label>

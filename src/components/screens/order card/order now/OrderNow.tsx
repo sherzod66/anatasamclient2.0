@@ -14,11 +14,13 @@ import { orderNowValidation, paymentInfoValidation } from './orderNowValidation'
 import { clickRedirect, handelMutationData } from './handelMutationData'
 import { useRouter } from 'next/navigation'
 import Loader from '@/components/ui/Loader/Loader'
+import { useTranslation } from 'react-i18next'
 
 const OrderNow: FC = () => {
 	const orderInfo = getOrderNowLocal()
 	const { push } = useRouter()
 	const [createOrder, { isLoading, data: response }] = useCreateOrderMutation()
+	const { t } = useTranslation()
 	const { data } = useGetUserQuery(getToken())
 	const [info, setInfo] = useState<IInvitationInfo>(defaultInfo(orderInfo))
 	const [paymentInfo, setPaymentInfo] = useState<IOrderInfo>({
@@ -55,13 +57,15 @@ const OrderNow: FC = () => {
 					<div className={styles.writeOrder__row}>
 						<div className={styles.writeOrder__column}>
 							<div className={styles.writeOrder__item}>
-								<h2>Выбранное пригласительное</h2>
+								<h2>{t('checked_card')}</h2>
 								<div className={styles.writeOrder__image}>
 									<img src={imageLik(orderInfo.imageLink[0])} alt={orderInfo.name} />
 								</div>
-								<h2>Количество: {orderInfo.orderQuantity}</h2>
+								<h2>
+									{t('quantity')}: {orderInfo.orderQuantity}
+								</h2>
 								<div className={styles.writeOrder__lang}>
-									<p>Язык пригласительной:</p>
+									<p>{t('lang')}:</p>
 									<span>
 										<input
 											id='lang-id'
@@ -108,7 +112,7 @@ const OrderNow: FC = () => {
 										EN
 									</span>
 								</div>
-								<label htmlFor='luckyOnce'>Виновники торжества</label>
+								<label htmlFor='luckyOnce'>{t('luckyOnes')}</label>
 								<input
 									className={styles.writeOrder__input}
 									id='luckyOnce'
@@ -118,7 +122,7 @@ const OrderNow: FC = () => {
 									type='text'
 									name='name'
 								/>
-								<label htmlFor='data'>Дата и время церемонии</label>
+								<label htmlFor='data'>{t('time_and_date')}</label>
 								<div className={styles.writeOrder__data}>
 									<p>
 										<input
@@ -130,7 +134,7 @@ const OrderNow: FC = () => {
 										/>
 									</p>
 									<p>
-										<label htmlFor='time'>Время</label>
+										<label htmlFor='time'>{t('time')}</label>
 										<input
 											id='time'
 											placeholder='18:00'
@@ -142,7 +146,7 @@ const OrderNow: FC = () => {
 										/>
 									</p>
 								</div>
-								<label htmlFor='restaurant'>Название Ресторана</label>
+								<label htmlFor='restaurant'>{t('restaurant')}</label>
 								<input
 									id='restaurant'
 									type='text'
@@ -155,7 +159,7 @@ const OrderNow: FC = () => {
 									className={styles.writeOrder__input}
 								/>
 
-								<label htmlFor='family'>С уважением семьи</label>
+								<label htmlFor='family'>{t('family')}</label>
 								<input
 									id='family'
 									type='text'
@@ -164,10 +168,10 @@ const OrderNow: FC = () => {
 									name='family'
 									className={styles.writeOrder__input}
 								/>
-								<label htmlFor='comment'>Комментарий</label>
+								<label htmlFor='comment'>{t('comment')}</label>
 								<textarea
 									className={styles.writeOrder__textarea}
-									placeholder='Пригласительное должно быть готово уже через 2 дня'
+									placeholder='Детали заказа'
 									onChange={event =>
 										setInfo(prev => ({
 											...prev,
@@ -183,7 +187,7 @@ const OrderNow: FC = () => {
 					</div>
 					<div className={styles.writeOrder__result}>
 						<div className={styles.writeOrder__payment_method}>
-							<label htmlFor='payment-method'>Способ оплаты:</label>
+							<label htmlFor='payment-method'>{t('payment_method')}:</label>
 							<select
 								onChange={e =>
 									setPaymentInfo(prev => ({
@@ -229,6 +233,18 @@ const OrderNow: FC = () => {
 									onChange={e =>
 										setPaymentInfo(prev => ({
 											...prev,
+											orderPrice: +e.target.value
+										}))
+									}
+									placeholder='Order price'
+									value={paymentInfo.orderPrice}
+									type='text'
+									className={styles.writeOrder__input}
+								/>
+								<input
+									onChange={e =>
+										setPaymentInfo(prev => ({
+											...prev,
 											paid: +e.target.value
 										}))
 									}
@@ -246,10 +262,13 @@ const OrderNow: FC = () => {
 							</div>
 						)}
 						<p className={styles.writeOrder__result_price}>
-							Итого: <span>{formatPrice(orderInfo.price * orderInfo.orderQuantity)}</span>
+							{t('total')}:{' '}
+							<span>
+								{formatPrice(orderInfo.price * orderInfo.orderQuantity)} {t('sum')}
+							</span>
 						</p>
 						<button type='submit' className={styles.writeOrder__button}>
-							Заказать
+							{t('orders')}
 						</button>
 					</div>
 				</form>

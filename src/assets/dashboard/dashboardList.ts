@@ -15,6 +15,7 @@ type TDashboard = {
 	link: string
 	icon: IconType
 	title: string
+	translateTitle: string
 	PopupDetail?: FC
 	DashboardComponent: FC
 	role: string
@@ -25,7 +26,8 @@ export const dashboardBarList: TDashboard[] = [
 		link: '/manager/orders',
 		icon: FaNetworkWired,
 		DashboardComponent: AdminOrder,
-		role: 'DIRECTOR MANAGER'
+		role: 'DIRECTOR MANAGER',
+		translateTitle: 'Заказы'
 	},
 	{
 		icon: LuWalletCards,
@@ -33,14 +35,16 @@ export const dashboardBarList: TDashboard[] = [
 		title: 'Invitation cards',
 		DashboardComponent: AdminInvitation,
 		PopupDetail: AdminInvitationPopup,
-		role: 'DIRECTOR SALESMAN'
+		role: 'DIRECTOR SALESMAN',
+		translateTitle: 'Пригласительные'
 	},
 	{
 		icon: HiUser,
 		link: '/manager/all-users',
 		title: 'All users',
 		DashboardComponent: AdminAllUser,
-		role: 'DIRECTOR'
+		role: 'DIRECTOR',
+		translateTitle: 'Все пользователи'
 	},
 	{
 		icon: RiMovie2Fill,
@@ -48,13 +52,15 @@ export const dashboardBarList: TDashboard[] = [
 		title: 'Electronic',
 		DashboardComponent: AdminElectronic,
 		PopupDetail: AdminElectronicPopup,
-		role: 'DIRECTOR SALESMAN'
+		role: 'DIRECTOR SALESMAN',
+		translateTitle: 'Электронные пригласительные'
 	},
 	{
 		icon: FaClipboardList,
 		link: '/manager/report',
 		title: 'Report',
 		DashboardComponent: AdminReport,
-		role: 'DIRECTOR'
+		role: 'DIRECTOR',
+		translateTitle: 'Отчетность'
 	}
 ]

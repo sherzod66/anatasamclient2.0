@@ -50,7 +50,7 @@ const AdminInvitation: FC = () => {
 										</Link>
 										<p className={styles.dashboard__time}>Price: {formatPrice(card.price)}</p>
 										<p className={styles.dashboard__time}>
-											{new Date(card.createdAt).toLocaleDateString()}
+											{new Date(+card.createdAt).toLocaleDateString()}
 										</p>
 										<p className={styles.dashboard__time}>Oders: {card.orders}</p>
 										<p className={styles.dashboard__time}>In stock: {card.quantity}</p>

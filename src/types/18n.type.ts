@@ -1,3 +1,3 @@
 export type I18NLocale = {
-	params: { locale: any }
+	params: { locale: string }
 }

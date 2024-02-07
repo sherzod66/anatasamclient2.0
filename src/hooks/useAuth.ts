@@ -11,7 +11,7 @@ export const useAuth = (): IAuth => {
 	const { editAuth } = useActions()
 	const pathname = usePathname()
 	useEffect(() => {
-		const token = Cookies.get(`${process.env.NEXT_PUBLIC_TOKEN_NAME}`)
+		const token = auth.token
 		if (!token) {
 			editAuth({ auth: null, isAdmin: false, token: auth.token })
 		}
@@ -22,5 +22,5 @@ export const useAuth = (): IAuth => {
 		if (isSuccess) editAuth({ auth: true, isAdmin: data?.isAdmin, token: auth.token })
 	}, [isSuccess, isError, pathname])
 
-	return useMemo(() => auth, [auth])
+	return useMemo(() => auth, [auth, pathname])
 }
