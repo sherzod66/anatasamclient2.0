@@ -66,6 +66,7 @@ export const useInvitationPopup = () => {
 							price: 0,
 							quantity: 0
 						})
+						setSelectType({ barcode: '', select: '' })
 						setNotification(prev => ({
 							...prev,
 							loading: false,

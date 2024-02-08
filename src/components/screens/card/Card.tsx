@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation'
 import { Breadcrumb, message } from 'antd'
 import { IoMdHome } from 'react-icons/io'
 import { useTranslation } from 'react-i18next'
+import Advice from './advice/Advice'
 
 type TCardProps = {
 	card: ICard
@@ -67,7 +68,7 @@ const CardDetail: FC<TCardProps> = ({ card }) => {
 							},
 							{
 								href: '/goods/all',
-								title: 'Пригласительные'
+								title: t('invitation_breadcrumb')
 							},
 							{
 								title: `${card.name}`
@@ -122,6 +123,7 @@ const CardDetail: FC<TCardProps> = ({ card }) => {
 					</div>
 				</div>
 			</section>
+			<Advice type={card.type} id={card.id} />
 		</>
 	)
 }
