@@ -53,8 +53,7 @@ export const metadata: Metadata = {
 		]
 	},
 	keywords: 'inventation congratulatory wedding',
-	authors: [{ name: 'Sherzod Sadillaev [sherzodjonsadillaev@gmail.com]' }],
-	openGraph: { images: `${process.env.CLIENT_API}/icon/avatar1.jpg` }
+	authors: [{ name: 'Sherzod Sadillaev [sherzodjonsadillaev@gmail.com]' }]
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
