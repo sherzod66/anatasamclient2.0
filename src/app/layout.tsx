@@ -11,7 +11,6 @@ const firaSans = Fira_Sans({
 
 export const metadata: Metadata = {
 	title: 'Anatasam',
-	authors: [{ name: 'Sherzod Sadillaev [sherzodjonsadillaev@gmail.com]' }],
 	description:
 		'Anatasam Invitation это одна из самых лидирующих компаний в Узбекистане по производству и печати пригласительных и поздравительных открыток, наша компания обслуживает и радует наших клиентов более 15 лет и   продолжает совершенствовать ассортимент своей продукции и привлекать более широкую аудиторию за счет повышения качества, продолжая развивать свою отрасль. Наша компания отличается одной особенностью, тем что у нас нет границ мы принимаем и отправляем нашу продукцию даже в самые дальние уголки мира. Мы печатали пригласительные для наших клиентов из Америки, Италии, Франции, Великобритании, России и много других стран и на самых разных языках мира. Мы гордимся за то, что мы всегда готовим лучшее, это является основной целью Anatasam Invitation, и так будет продолжаться и в будущем.',
 	icons: {
@@ -53,7 +52,9 @@ export const metadata: Metadata = {
 			}
 		]
 	},
-	keywords: 'inventation congratulatory wedding'
+	keywords: 'inventation congratulatory wedding',
+	authors: [{ name: 'Sherzod Sadillaev [sherzodjonsadillaev@gmail.com]' }],
+	openGraph: { images: `${process.env.CLIENT_API}/icon/avatar1.jpg` }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -51,29 +51,28 @@ const Footer: FC = () => {
 					</div>
 				</div>
 
-				{/* <YMaps query={{ apikey: "133b3708-1c55-470b-8767-19e75d2d9d81" }}>
-          <Map
-            className="footer__map-width"
-            defaultState={{ center: [39.652431, 66.954715], zoom: 18 }}
-          >
-            <Placemark
-              modules={["geoObject.addon.balloon"]}
-              defaultGeometry={[39.652431, 66.954715]}
-              properties={{
-                balloonContentHeader: "Anatasam",
-                balloonContentBody: "улица Амира Тимура, 36",
-                balloonContentFooter: "Пригласительные",
-              }}
-              options={{
-                iconLayout: "default#image",
-                iconImageHref:
-                  "https://cdn-icons-png.flaticon.com/512/143/143960.png",
-                iconImageSize: [35, 35],
-                iconImageOffset: [-18, -34],
-              }}
-            />
-          </Map>
-        </YMaps> */}
+				<YMaps query={{ apikey: '133b3708-1c55-470b-8767-19e75d2d9d81' }}>
+					<Map
+						className='footer__map-width'
+						defaultState={{ center: [39.652431, 66.954715], zoom: 18 }}
+					>
+						<Placemark
+							modules={['geoObject.addon.balloon']}
+							defaultGeometry={[39.652431, 66.954715]}
+							properties={{
+								balloonContentHeader: 'Anatasam',
+								balloonContentBody: 'улица Амира Тимура, 36',
+								balloonContentFooter: 'Пригласительные'
+							}}
+							options={{
+								iconLayout: 'default#image',
+								iconImageHref: 'https://cdn-icons-png.flaticon.com/512/143/143960.png',
+								iconImageSize: [35, 35],
+								iconImageOffset: [-18, -34]
+							}}
+						/>
+					</Map>
+				</YMaps>
 			</div>
 		</footer>
 	)

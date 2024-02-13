@@ -23,7 +23,9 @@ const Bestsellers: FC<{ locale: string }> = async ({ locale }) => {
 											<img src={imageLik(card.imageLink[0])} />
 										</div>
 										<div className={styles.invitation__text}>{card.name}</div>
-										<div className={styles.invitation__price}>{formatPrice(card.price)}</div>
+										<div className={styles.invitation__price}>
+											{formatPrice(card.price)} {t('sum')}
+										</div>
 									</Link>
 								</div>
 							))}

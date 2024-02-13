@@ -13,7 +13,7 @@ export const carouselData: TCarouselData[] = [
 		titleEn: 'Bestsellers'
 	},
 	{
-		link: 'goods/all',
+		link: 'goods/wedding',
 		imageLink: 'https://www.erdemdavetiye.com//images/home-banner/banner-5.jpg',
 		title: 'Новая коллекция',
 		titleEn: 'New collection'

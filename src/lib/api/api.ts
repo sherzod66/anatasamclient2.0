@@ -1,4 +1,3 @@
-import { ICard } from '@/types/card.type'
 import { IUser } from '@/types/user.type'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { TAuth, getUserHelper, postAuthKey, postUserAuth } from './api helper/api.heper'
@@ -21,7 +20,7 @@ export const apiSlice = createApi({
 		}),
 		auth: builder.mutation<TAuth, string>({
 			query: numberPhone => ({
-				url: 'https://jsonplaceholder.typicode.com/posts', //postUserAuth(),
+				url: postUserAuth(), //'https://jsonplaceholder.typicode.com/posts'
 				method: 'POST',
 				body: {
 					phoneNumber: `+998${numberPhone}`
