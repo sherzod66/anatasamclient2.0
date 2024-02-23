@@ -4,13 +4,9 @@ import { IInvitationInfo } from '@/types/invitationInfo.type'
 import { IOrder } from '@/types/order.type'
 
 export const countReportPrice = (arg: IOrder[]): number => {
-	const invitationInfo: IInvitationInfo[] = []
 	let price = 0
 	for (let index = 0; index < arg.length; index++) {
-		invitationInfo.push(...arg[index].invitationInfo)
-	}
-	for (let index = 0; index < invitationInfo.length; index++) {
-		price += invitationInfo[index].quantity * invitationInfo[index].cardPrice
+		price += arg[index].paid
 	}
 	return price
 }
