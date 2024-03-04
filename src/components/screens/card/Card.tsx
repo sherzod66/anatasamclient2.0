@@ -98,6 +98,9 @@ const CardDetail: FC<TCardProps> = ({ card }) => {
 										{t('in_stock')}: {card.quantity}
 									</p>
 								</div>
+								<p className={styles.price__unit}>
+									{formatPrice(card.price)} {t('sum')} /{t('unit')}
+								</p>
 								<p className={styles.card__min_order}>
 									{t('min_quantity_order')}: {card.minOrderQuantity}
 								</p>

@@ -49,7 +49,7 @@ const BasketCard: FC<TBasketCard> = ({ card }) => {
 									<div className={styles.product__price_pc}>
 										<BasketCount card={item} />
 										<span>
-											{formatPrice(item.price)} сум /{t('unit')}.
+											{formatPrice(item.price)} {t('sum')} /{t('unit')}.
 										</span>
 									</div>
 									<button

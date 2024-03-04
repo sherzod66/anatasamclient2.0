@@ -47,7 +47,7 @@ const ModelEdit: FC<TModelEdit> = ({ setEdit, data }) => {
 						value={card.name}
 						type='text'
 					/>
-					<label htmlFor='description'>Card name</label>
+					<label htmlFor='description'>Card description</label>
 					<textarea
 						className={styles.textarea__big}
 						id='description'
