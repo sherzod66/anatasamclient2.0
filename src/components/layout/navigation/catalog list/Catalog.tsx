@@ -30,12 +30,12 @@ const Catalog: FC = () => {
 				</Link>
 			</li>
 			<li>
-				<Link className={styles.catalog__link} href='/goods/wedding'>
+				<Link className={styles.catalog__link} href='/goods/congratulatory'>
 					<FaGift /> {t('congratulatory')}
 				</Link>
 			</li>
 			<li>
-				<Link className={styles.catalog__link} href='/goods/wedding'>
+				<Link className={styles.catalog__link} href='/goods/anniversary'>
 					<BsFillEnvelopeHeartFill /> {t('anniversary')}
 				</Link>
 			</li>
