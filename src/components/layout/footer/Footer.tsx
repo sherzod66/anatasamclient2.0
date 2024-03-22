@@ -50,7 +50,6 @@ const Footer: FC = () => {
 						</a>
 					</div>
 				</div>
-
 				<YMaps query={{ apikey: '133b3708-1c55-470b-8767-19e75d2d9d81' }}>
 					<Map
 						className='footer__map-width'

@@ -20,7 +20,7 @@ export const apiSlice = createApi({
 		}),
 		auth: builder.mutation<TAuth, string>({
 			query: numberPhone => ({
-				url: postUserAuth(), //'https://jsonplaceholder.typicode.com/posts'
+				url: 'https://jsonplaceholder.typicode.com/posts', //postUserAuth()
 				method: 'POST',
 				body: {
 					phoneNumber: `+998${numberPhone}`

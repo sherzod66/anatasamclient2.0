@@ -56,7 +56,7 @@ const ModalProfile: FC<TModalProfile> = ({ order, setModal }) => {
 							okText='Yes'
 							cancelText='No'
 						>
-							<Button danger>Delete</Button>
+							<Button danger>{t('delete')}</Button>
 						</Popconfirm>
 					</div>
 				</div>

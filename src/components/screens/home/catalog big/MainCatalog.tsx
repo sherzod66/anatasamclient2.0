@@ -14,7 +14,7 @@ const MainCatalog: FC<{ locale: string }> = async ({ locale }) => {
 						<Link href='/goods/wedding' className={styles.offer__item}>
 							<img draggable={false} src='/catalog/wedding.webp' alt='wedding' />
 							<div className={styles.offer__info}>
-								<h2>{t('invitation')}</h2>
+								<h2>{t('invitationn')}</h2>
 								<button className={styles.offer__button} type='button'>
 									{t('look')}
 								</button>

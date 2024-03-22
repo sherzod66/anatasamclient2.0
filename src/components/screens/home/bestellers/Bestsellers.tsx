@@ -20,7 +20,7 @@ const Bestsellers: FC<{ locale: string }> = async ({ locale }) => {
 								<div key={card.id} className={styles.invitation__column}>
 									<Link href={'/card/' + card.id} className={styles.invitation__item}>
 										<div className={styles.invitation__img}>
-											<img src={imageLik(card.imageLink[0])} />
+											<img loading='lazy' src={imageLik(card.imageLink[0])} />
 										</div>
 										<div className={styles.invitation__text}>{card.name}</div>
 										<div className={styles.invitation__price}>
