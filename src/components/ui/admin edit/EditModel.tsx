@@ -54,6 +54,14 @@ const ModelEdit: FC<TModelEdit> = ({ setEdit, data }) => {
 						onChange={e => setCard(prev => ({ ...prev, description: e.target.value }))}
 						value={card.description}
 					/>
+					<label htmlFor='name'>Barcode</label>
+					<input
+						className={styles.input__big}
+						onChange={e => setCard(prev => ({ ...prev, barcode: e.target.value }))}
+						id='name'
+						value={card.barcode}
+						type='text'
+					/>
 					<div className={styles.edit__row}>
 						<p>
 							<label htmlFor='quantity'>Quantity</label>
