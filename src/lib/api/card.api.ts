@@ -1,6 +1,14 @@
 import { ICard, ICardCreate, ICardEdit } from '@/types/card.type'
 import { apiSlice } from './api'
-import { createCard, deleteCard, getCardByTag, updateCard } from './api helper/api.heper'
+import {
+	createCard,
+	deleteCard,
+	deleteCardImage,
+	getCardById,
+	getCardByTag,
+	pushCardImage,
+	updateCard
+} from './api helper/api.heper'
 import { getToken } from './api helper/apiCookies.helper'
 
 export const cardApi = apiSlice.injectEndpoints({
@@ -55,6 +63,35 @@ export const cardApi = apiSlice.injectEndpoints({
 				}
 			}),
 			invalidatesTags: () => [{ type: 'Card' }]
+		}),
+		deleteCardImage: builder.mutation<ICard, { cardId: number; imagePath: string }>({
+			query: body => ({
+				url: deleteCardImage(),
+				method: 'PUT',
+				headers: {
+					Authorization: `Bearer ${getToken()}`
+				},
+				body
+			}),
+			invalidatesTags: () => [{ type: 'Card' }]
+		}),
+		pushImage: builder.mutation<ICard, { cardId: number; imagePath: string }>({
+			query: body => ({
+				url: pushCardImage(),
+				method: 'PUT',
+				headers: {
+					Authorization: `Bearer ${getToken()}`
+				},
+				body
+			}),
+			invalidatesTags: () => [{ type: 'Card' }]
+		}),
+		getCardById: builder.query<ICard, { id: number }>({
+			query: ({ id }) => ({
+				url: `${getCardById()}/${id}`,
+				method: 'GET'
+			}),
+			providesTags: () => [{ type: 'Card' }]
 		})
 	})
 })
@@ -65,5 +102,8 @@ export const {
 	useCreateCardMutation,
 	useDeleteCardMutation,
 	useUpdateCardMutation,
-	useGetCardByTagQuery
+	useGetCardByTagQuery,
+	useDeleteCardImageMutation,
+	useGetCardByIdQuery,
+	usePushImageMutation
 } = cardApi

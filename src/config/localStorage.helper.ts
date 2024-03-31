@@ -56,7 +56,7 @@ export const setOrderNowLocal = (card: ICard, orderQuantity: number) => {
 	delete changeCard.id
 	window.localStorage.setItem(
 		'orderNow',
-		JSON.stringify({ ...changeCard, orderQuantity, cardId: card.id })
+		JSON.stringify({ ...changeCard, orderQuantity, cardId: card.id, cardName: card.name })
 	)
 }
 export const getOrderNowLocal = (): IOrderNow =>

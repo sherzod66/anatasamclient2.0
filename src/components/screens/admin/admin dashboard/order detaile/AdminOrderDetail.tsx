@@ -9,6 +9,7 @@ import { lazyImage } from '@/util/lazyImage'
 import { imageLinkHelper } from '@/components/ui/card carousel/imageLink.halper'
 import { Button, Popconfirm, Select, message } from 'antd'
 import { useChangeStatusMutation, useDeleteOrderMutation } from '@/lib/api/orders.api'
+import { useGetCardByIdQuery } from '@/lib/api/card.api'
 type TDetailProps = {
 	data: IOrder
 }
@@ -51,6 +52,7 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 			}
 		}
 	}, [deleteOrderData])
+	console.log(data.invitationInfo)
 	return (
 		<div
 			onClick={popup}
@@ -137,6 +139,15 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 										/>
 									</div>
 									<div className={styles.order__info}>
+										<div title='Имя пригласительной' className={styles.order__rowQuantity}>
+											<strong>Card name: </strong> {item.cardName ? item.cardName : 'Unknown'}
+										</div>
+										<div title='Количество' className={styles.order__rowQuantity}>
+											<strong>Quantity: </strong> {item.quantity}
+										</div>
+										<div title='Язык пригласительной' className={styles.order__rowQunaty}>
+											<strong>Lang:</strong> {item.lang}
+										</div>
 										<div title='Виновники торжества' className={styles.order__rowNameP}>
 											<strong>Bride and groom: </strong> {item.luckyOnes}
 										</div>
@@ -146,14 +157,8 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 										<div title='С уважением семьи' className={styles.order__famly}>
 											<strong>Family :</strong> {item.family}
 										</div>
-										<div title='Количество' className={styles.order__rowQuantity}>
-											<strong>Quantity: </strong> {item.quantity}
-										</div>
 										<div title='Время и дата' className={styles.order__rowQunaty}>
 											<strong>Date :</strong> {item.date} в {item.time}
-										</div>
-										<div title='Язык пригласительной' className={styles.order__rowQunaty}>
-											<strong>Lang:</strong> {item.lang}
 										</div>
 										<div title='Коментарий' className={styles.order__itemInfoColumn}>
 											<div className={styles.comment__user}>

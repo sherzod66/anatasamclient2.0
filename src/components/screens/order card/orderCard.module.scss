@@ -26,6 +26,15 @@
 				display: flex;
 				margin: 0px -10px;
 				flex-wrap: wrap;
+				position: relative;
+				.copy {
+					cursor: pointer;
+					position: absolute;
+					top: 30px;
+					right: 30px;
+					font-size: 22px;
+					color: #1f1f1f;
+				}
 				.writeOrder__column {
 					flex: 0 1 50%;
 					padding: 10px 10px;

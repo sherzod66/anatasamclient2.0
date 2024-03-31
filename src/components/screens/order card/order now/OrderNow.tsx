@@ -26,7 +26,7 @@ const OrderNow: FC = () => {
 	const [paymentInfo, setPaymentInfo] = useState<IOrderInfo>({
 		invitationInfo: [],
 		orderPrice: orderInfo.price * orderInfo.orderQuantity,
-		paymentMethod: 'UZCARD',
+		paymentMethod: data ? (data.isAdmin ? 'CASH' : 'UZCARD') : 'CASH',
 		userName: data ? (data.isAdmin ? '' : data.name ? data.name : 'unknown') : '',
 		userPhone: data ? (data.isAdmin ? '' : data.phoneNumber) : '',
 		paid: 0,
@@ -35,7 +35,7 @@ const OrderNow: FC = () => {
 	const handelSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		if (orderNowValidation(info) && paymentInfoValidation(paymentInfo)) {
-			//console.log(handelMutationData(info, paymentInfo));
+			//console.log(handelMutationData(info, paymentInfo))
 			createOrder(handelMutationData(info, paymentInfo))
 		}
 	}
@@ -196,6 +196,7 @@ const OrderNow: FC = () => {
 									}))
 								}
 								name='chose-card'
+								value={data?.isAdmin ? 'CASH' : 'UZCARD'}
 								id='payment-method'
 							>
 								<option value='UZCARD'>UZCARD</option>

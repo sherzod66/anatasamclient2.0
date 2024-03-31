@@ -9,6 +9,7 @@ import { formatPrice } from '@/util/formatPrice'
 import { changeEvent } from './changeEvent'
 import { FaFileCircleCheck } from 'react-icons/fa6'
 import { checkWriteMulti } from '@/config/localStorage.helper'
+import { IoIosCopy } from 'react-icons/io'
 
 const OrderBasket: FC = () => {
 	const {
@@ -22,6 +23,7 @@ const OrderBasket: FC = () => {
 		contextHolder,
 		handelSubmitForm,
 		handelLoading,
+		copyInfo,
 		t
 	} = useOrderBasketInfo()
 
@@ -33,6 +35,9 @@ const OrderBasket: FC = () => {
 			<div className={styles.writeOrder__container}>
 				<form onSubmit={handelSubmitForm} className={styles.writeOrder__form}>
 					<div className={styles.writeOrder__row}>
+						<div onClick={copyInfo} className={styles.copy}>
+							<IoIosCopy />
+						</div>
 						{invitationInfo.map((info, index) => (
 							<div key={info.cardId} className={styles.writeOrder__column}>
 								<div className={styles.writeOrder__item}>
@@ -130,6 +135,7 @@ const OrderBasket: FC = () => {
 									<input
 										id={`${info.cardId}-restaurant`}
 										type='text'
+										value={info.restaurant}
 										onChange={e =>
 											changeEvent(index, e, invitationInfo, 'restaurant', setInvitationInfo)
 										}
@@ -172,6 +178,7 @@ const OrderBasket: FC = () => {
 										paymentMethod: e.target.value as IPayment
 									}))
 								}
+								value={user?.isAdmin ? 'CASH' : 'UZCARD'}
 								name='chose-card'
 								id='payment-method'
 							>

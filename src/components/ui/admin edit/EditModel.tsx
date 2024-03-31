@@ -1,5 +1,5 @@
 'use client'
-import { Dispatch, FC, FormEvent, SetStateAction, useState } from 'react'
+import { Dispatch, FC, FormEvent, SetStateAction, useEffect, useState } from 'react'
 import styles from './editModel.module.scss'
 import { ICard } from '@/types/card.type'
 import { useUpdateCardMutation } from '@/lib/api/card.api'
@@ -7,6 +7,7 @@ import { Select } from 'antd'
 import { optionsInvitation } from '@/components/screens/admin/admin popup/selectOption'
 import { editCardObject } from './editCardObject'
 import Loader from '../Loader/Loader'
+import ImageEdit from './ImageEdit'
 
 type TModelEdit = {
 	setEdit: Dispatch<
@@ -32,12 +33,14 @@ const ModelEdit: FC<TModelEdit> = ({ setEdit, data }) => {
 			onClick={e =>
 				!(e.target as HTMLElement).closest('#model-content') &&
 				!(e.target as HTMLElement).closest('.ant-select-dropdown') &&
+				!(e.target as HTMLElement).closest('.ant-popover-inner') &&
 				setEdit(prev => ({ ...prev, isShow: false }))
 			}
 			className={styles.model}
 		>
 			<div id='model-content' className={styles.model__content}>
 				{isLoading && <Loader />}
+				<ImageEdit cardId={card.id} />
 				<form onSubmit={onSubmit} className={styles.editForm}>
 					<label htmlFor='name'>Card name</label>
 					<input

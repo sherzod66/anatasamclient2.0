@@ -26,7 +26,7 @@ export const useOrderBasketInfo = () => {
 	const [paymentInfo, setPaymentInfo] = useState<IOrderInfo>({
 		invitationInfo: [],
 		orderPrice: 0,
-		paymentMethod: 'UZCARD',
+		paymentMethod: user ? (user.isAdmin ? 'CASH' : 'UZCARD') : 'CASH',
 		userName: '',
 		userPhone: '',
 		paid: 0,
@@ -74,6 +74,31 @@ export const useOrderBasketInfo = () => {
 			openNotification('top', api, t('order_notification_m'), t('order_notification_d'))
 		}
 	}
+	const copyInfo = () => {
+		const firstElement = invitationInfo.slice(0, 1)[0]
+		const allCardCopy = [...invitationInfo]
+		const payloadData = allCardCopy.map((elem): IInvitationInfo => {
+			if (elem.cardId !== firstElement.cardId) {
+				return {
+					cardId: elem.cardId,
+					cardImage: elem.cardImage,
+					cardName: elem.cardName,
+					cardPrice: elem.cardPrice,
+					comment: elem.comment,
+					date: firstElement.date,
+					family: firstElement.family,
+					lang: elem.lang,
+					luckyOnes: firstElement.luckyOnes,
+					quantity: elem.quantity,
+					restaurant: firstElement.restaurant,
+					time: firstElement.time
+				}
+			} else {
+				return elem
+			}
+		})
+		setInvitationInfo([...payloadData])
+	}
 	return useMemo(
 		() => ({
 			data,
@@ -87,6 +112,7 @@ export const useOrderBasketInfo = () => {
 			contextHolder,
 			handelSubmitForm,
 			handelLoading,
+			copyInfo,
 			t
 		}),
 		[data, invitationInfo, paymentInfo, user, api, response, handelLoading]

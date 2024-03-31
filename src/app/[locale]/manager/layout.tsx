@@ -20,9 +20,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 				<main className={styles.dashboard}>
 					<section className={styles.dashboard__bar}>
 						<div className={styles.dashboard__bar_body}>
-							<div className={styles.dashboard__bar_logo}>
+							<Link href='/' className={styles.dashboard__bar_logo}>
 								<img src='/icon/logoMobile.png' alt='Logo' />
-							</div>
+							</Link>
 							<ul className={styles.dashboard__bar_list}>
 								{dashboardBarList.map(element => {
 									if (element.role.includes(data.role))
