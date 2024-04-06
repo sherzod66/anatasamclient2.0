@@ -1,19 +1,32 @@
 'use client'
-import { FC, useEffect, useState } from 'react'
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import styles from '@/components/ui/count/count.module.scss'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import cn from 'clsx'
 import { ICard } from '@/types/card.type'
 import { minusCount, plusCount } from '../../card/countFunction'
-import { editLocalBasket, getAllLocal, getLocalQuantity } from '@/config/localStorage.helper'
-import { useActions } from '@/hooks/useActions'
+import { IInvitationInfo } from '@/types/invitationInfo.type'
+import {
+	changeEventOrder,
+	changeEventOrderQuantity
+} from '../../order card/order basket/changeEvent'
+import { IOrder } from '@/types/order.type'
 
 type TCardProps = {
 	card: ICard
+	setInvitation: Dispatch<SetStateAction<IInvitationInfo[]>>
+	invitationInfo: IInvitationInfo
+	allInvitationInfo: IInvitationInfo[]
+	index: number
 }
-const BasketCount: FC<TCardProps> = ({ card }) => {
-	const [count, setCount] = useState<string>(String(getLocalQuantity(card.id)?.orderQuantity))
-	const { countBasket } = useActions()
+const OrderQuantityCount: FC<TCardProps> = ({
+	card,
+	invitationInfo,
+	setInvitation,
+	index,
+	allInvitationInfo
+}) => {
+	const [count, setCount] = useState<string>(String(invitationInfo.quantity))
 	const [focus, setFocus] = useState<boolean>(true)
 	useEffect(() => onBlur(), [])
 	const onBlur = () => {
@@ -21,13 +34,10 @@ const BasketCount: FC<TCardProps> = ({ card }) => {
 		if (card.minOrderQuantity > +count) setCount(String(card.minOrderQuantity))
 		if (card.quantity < +count) setCount(String(card.quantity))
 	}
-	useEffect(() => {
-		editLocalBasket(card.id, +count, card.price)
-		let checkLocal = getAllLocal()
-		countBasket(checkLocal ? checkLocal : [])
-	}, [count])
+	useEffect(() => changeEventOrderQuantity(index, count, allInvitationInfo, setInvitation), [count])
 	return (
 		<div
+			style={{ marginTop: '10px' }}
 			className={cn(
 				styles.card__quantity_input,
 				{ [styles.active]: focus },
@@ -56,4 +66,4 @@ const BasketCount: FC<TCardProps> = ({ card }) => {
 	)
 }
 
-export default BasketCount
+export default OrderQuantityCount

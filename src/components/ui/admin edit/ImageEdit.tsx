@@ -32,7 +32,6 @@ const ImageEdit: FC<{ cardId: number }> = ({ cardId }) => {
 		}
 	}
 	const cancel = (e: MouseEvent<HTMLElement, globalThis.MouseEvent> | undefined) => {
-		console.log(e)
 		message.error('Click on No')
 	}
 	return (

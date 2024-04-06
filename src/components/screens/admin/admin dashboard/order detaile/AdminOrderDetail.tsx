@@ -1,5 +1,5 @@
 'use client'
-import { FC, MouseEvent, useEffect, useState } from 'react'
+import { Dispatch, FC, MouseEvent, SetStateAction, useEffect, useState } from 'react'
 import styles from './adminOrder.module.scss'
 import { IOrder } from '@/types/order.type'
 import { GetData } from '@/util/Date.heper'
@@ -9,12 +9,14 @@ import { lazyImage } from '@/util/lazyImage'
 import { imageLinkHelper } from '@/components/ui/card carousel/imageLink.halper'
 import { Button, Popconfirm, Select, message } from 'antd'
 import { useChangeStatusMutation, useDeleteOrderMutation } from '@/lib/api/orders.api'
-import { useGetCardByIdQuery } from '@/lib/api/card.api'
+import { MdModeEdit } from 'react-icons/md'
+import { TEditOrder } from './AdminOrder'
 type TDetailProps = {
 	data: IOrder
+	setEditOrder: Dispatch<SetStateAction<TEditOrder>>
 }
 
-const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
+const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 	const [active, setActive] = useState<boolean>(false)
 	const [deleteOrder, { data: deleteOrderData }] = useDeleteOrderMutation()
 	const [statusChange, { isLoading, data: statusData }] = useChangeStatusMutation()
@@ -52,7 +54,6 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 			}
 		}
 	}, [deleteOrderData])
-	console.log(data.invitationInfo)
 	return (
 		<div
 			onClick={popup}
@@ -122,6 +123,18 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data }) => {
 									<Button danger>Delete</Button>
 								</Popconfirm>
 							</div>
+							<button
+								onClick={() =>
+									setEditOrder({
+										invitationInfo: data.invitationInfo,
+										isShow: true,
+										order: data
+									})
+								}
+								className={styles.edit__button}
+							>
+								<MdModeEdit /> Edit
+							</button>
 						</div>
 					</div>
 				) : (

@@ -40,7 +40,6 @@ const OrderNow: FC = () => {
 		}
 	}
 	useEffect(() => {
-		console.log(response)
 		if (response) {
 			if (data?.isAdmin) {
 				push('/manager/orders')

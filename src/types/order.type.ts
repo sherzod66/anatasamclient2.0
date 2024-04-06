@@ -38,3 +38,25 @@ export interface IOrderChangeStatusRequest {
 	id: number
 	status: 'PENDING' | 'IN_PROGRESS' | 'CAN_BE_PICKED_UP' | 'TOOK'
 }
+
+export const orderDefault: IOrder = {
+	id: 0,
+	createdAt: '',
+	invitationInfo: [],
+	orderPrice: 0,
+	paid: 0,
+	paidStatus: 'PENDING',
+	payment_id: '',
+	paymentMethod: 'CASH',
+	status: 'PENDING',
+	updatedAt: new Date(),
+	userName: '',
+	userPhone: ''
+}
+
+export interface IEditOrderRequest {
+	id: number
+	cardDifference: { cardId: number; increment: boolean; difference: number }[]
+	orderPrice: number
+	invitationInfo: IInvitationInfo[]
+}

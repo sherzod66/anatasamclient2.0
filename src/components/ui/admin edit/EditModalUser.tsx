@@ -16,7 +16,7 @@ type TModelEdit = {
 	>
 	data: IUser
 }
-const EditModelUser: FC<TModelEdit> = ({ setEdit, data }) => {
+const EditModalUser: FC<TModelEdit> = ({ setEdit, data }) => {
 	const [user, setUser] = useState<IUser>(data)
 	const [updateUser, { isLoading, isSuccess }] = useUpdateUserMutation()
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -102,4 +102,4 @@ const EditModelUser: FC<TModelEdit> = ({ setEdit, data }) => {
 	)
 }
 
-export default EditModelUser
+export default EditModalUser

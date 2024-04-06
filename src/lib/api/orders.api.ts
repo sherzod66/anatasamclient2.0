@@ -5,10 +5,12 @@ import {
 	createOrder,
 	deleteOrder,
 	getAllOrders,
-	orderChangeStatus
+	orderChangeStatus,
+	orderEdit
 } from './api helper/api.heper'
 import { getToken } from './api helper/apiCookies.helper'
 import {
+	IEditOrderRequest,
 	IOrder,
 	IOrderChangeStatusRequest,
 	IOrderChangeStatusResult,
@@ -53,6 +55,18 @@ export const ordersApi = apiSlice.injectEndpoints({
 			}),
 			invalidatesTags: () => [{ type: 'Orders' }]
 		}),
+		editOrder: builder.mutation<{ success: boolean }, IEditOrderRequest>({
+			query: body => ({
+				url: orderEdit(),
+				method: 'PUT',
+				headers: {
+					Authorization: `Bearer ${getToken()}`,
+					'Content-Type': 'application/json'
+				},
+				body
+			}),
+			invalidatesTags: () => [{ type: 'Orders' }]
+		}),
 		deleteOrder: builder.mutation<{ status: number; message: string }, { id: number }>({
 			query: ({ id }) => ({
 				url: `${deleteOrder()}/${id}`,
@@ -71,5 +85,6 @@ export const {
 	useCreateOrderMutation,
 	usePaymentVerificationQuery,
 	useChangeStatusMutation,
-	useDeleteOrderMutation
+	useDeleteOrderMutation,
+	useEditOrderMutation
 } = ordersApi

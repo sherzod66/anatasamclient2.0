@@ -18,7 +18,7 @@ type TModelEdit = {
 	>
 	data: ICard
 }
-const ModelEdit: FC<TModelEdit> = ({ setEdit, data }) => {
+const ModalEdit: FC<TModelEdit> = ({ setEdit, data }) => {
 	const [card, setCard] = useState<ICard>(data)
 	const handleChange = (value: string[]) => {
 		setCard(prev => ({ ...prev, type: value.join(' ') }))
@@ -123,4 +123,4 @@ const ModelEdit: FC<TModelEdit> = ({ setEdit, data }) => {
 	)
 }
 
-export default ModelEdit
+export default ModalEdit

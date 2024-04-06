@@ -1,4 +1,5 @@
 export interface IInvitationInfo {
+	id?: number
 	cardId: number
 	cardPrice: number
 	cardName: string

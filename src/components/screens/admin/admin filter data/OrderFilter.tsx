@@ -42,7 +42,7 @@ const OrderFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
 					style={{ width: '100%', height: '36px' }}
 					onChange={handleChangeOrder}
 					placeholder='Filter by order status'
-					defaultValue={'ALL'}
+					defaultValue={'PENDING'}
 					options={orderSelectOption}
 				/>
 			</div>

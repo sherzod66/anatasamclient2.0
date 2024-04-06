@@ -19,6 +19,10 @@
 		width: 50%;
 		border-radius: 10px;
 		background-color: #fff;
+		&.big {
+			flex: 0 1 90%;
+			width: 80%;
+		}
 		.image__row {
 			display: flex;
 			.image__column {

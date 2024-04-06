@@ -15,7 +15,6 @@ type TModalProfile = {
 const ModalProfile: FC<TModalProfile> = ({ order, setModal }) => {
 	const { t } = useTranslation()
 	const [deleteOrder, { data: deleteOrderData }] = useDeleteOrderMutation()
-	console.log(deleteOrderData)
 	useEffect(() => {
 		if (deleteOrderData) {
 			if (deleteOrderData.status >= 0) {

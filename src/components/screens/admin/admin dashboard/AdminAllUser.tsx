@@ -8,7 +8,7 @@ import cn from 'clsx'
 import { IUser } from '@/types/user.type'
 import UsersFilter from '../admin filter data/UsersFilter'
 import { userDefaultValue } from '../../profile/profile content/userDefault'
-import EditModelUser from '@/components/ui/admin edit/EditModelUser'
+import EditModelUser from '@/components/ui/admin edit/EditModalUser'
 import { useGetUserQuery } from '@/lib/api/api'
 
 const AdminAllUser: FC = () => {

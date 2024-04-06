@@ -1,223 +1,231 @@
-@import "/src/assets/styles/variable";
+@import '/src/assets/styles/variable';
 
 .order__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px -10px;
-  .order__column {
-    position: relative;
-    left: 0;
-    top: 0;
-    flex: 0 1 20%;
-    padding: 0px 10px;
-    margin: 0px 0px 40px 0px;
-    &.active {
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      background-color: #252525c4;
-      margin: 0px 0px;
-      padding: 100px 200px;
-      transition: background-color 0.5s ease 0s;
-    }
-    &.active .order__item {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      .order__itemInfo {
-        position: static;
-        transform: scale(1);
-        opacity: 1;
-        visibility: visible;
-      }
-      .order__row {
-        .order__rowColumn {
-          flex: 0 0 33.333%;
-          padding: 10px 10px;
-          cursor: default;
-          .order__rowImg {
-            border-radius: 15px 15px 0px 0px;
-            height: 200px;
-          }
-          .order__info {
-            position: static;
-            transform: scale(1);
-            opacity: 1;
-            visibility: visible;
-            background-color: $inputColor;
-            color: #000000;
-            border-radius: 0px 0px 15px 15px;
-            padding: 10px;
-            font-size: 18px;
-            line-height: 24px;
-          }
-        }
-      }
-    }
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px -10px;
+	.order__column {
+		position: relative;
+		left: 0;
+		top: 0;
+		flex: 0 1 20%;
+		padding: 0px 10px;
+		margin: 0px 0px 40px 0px;
+		&.active {
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			background-color: #252525c4;
+			margin: 0px 0px;
+			padding: 100px 200px;
+			transition: background-color 0.5s ease 0s;
+		}
+		&.active .order__item {
+			width: 100%;
+			height: 100%;
+			overflow-y: auto;
+			.order__itemInfo {
+				position: static;
+				transform: scale(1);
+				opacity: 1;
+				visibility: visible;
+			}
+			.order__row {
+				.order__rowColumn {
+					flex: 0 0 33.333%;
+					padding: 10px 10px;
+					cursor: default;
+					.order__rowImg {
+						border-radius: 15px 15px 0px 0px;
+						height: 200px;
+					}
+					.order__info {
+						position: static;
+						transform: scale(1);
+						opacity: 1;
+						visibility: visible;
+						background-color: $inputColor;
+						color: #000000;
+						border-radius: 0px 0px 15px 15px;
+						padding: 10px;
+						font-size: 18px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
 
-    .order__item {
-      width: 100%;
-      height: 280px;
-      display: block;
-      color: #000000;
-      background-color: #c2c2c21a;
-      border-radius: 20px;
-      overflow: hidden;
-      text-decoration: none;
-      padding: 15px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0px 0px 10px #000000b0;
-      &::-webkit-scrollbar-track {
-        background-color: #474747;
-        border-radius: 8px;
-      }
+		.order__item {
+			width: 100%;
+			height: 280px;
+			display: block;
+			color: #000000;
+			background-color: #c2c2c21a;
+			border-radius: 20px;
+			overflow: hidden;
+			text-decoration: none;
+			padding: 15px;
+			overflow: hidden;
+			cursor: pointer;
+			box-shadow: 0px 0px 10px #000000b0;
+			&::-webkit-scrollbar-track {
+				background-color: #474747;
+				border-radius: 8px;
+			}
 
-      &::-webkit-scrollbar-thumb {
-        background-color: #000000;
-        border-radius: 8px;
-      }
+			&::-webkit-scrollbar-thumb {
+				background-color: #000000;
+				border-radius: 8px;
+			}
 
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: #022c47;
-      }
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #022c47;
+			}
 
-      .order__itemInfo {
-        position: absolute;
-        transform: scale(0);
-        opacity: 0;
-        visibility: hidden;
-        background-color: $inputColor;
-        border-radius: 20px;
-        padding: 10px;
-        margin: 0px 0px 15px 0px;
-        display: flex;
-        transition: all 0.5s ease 0s;
-        cursor: default;
+			.order__itemInfo {
+				position: absolute;
+				transform: scale(0);
+				opacity: 0;
+				visibility: hidden;
+				background-color: $inputColor;
+				border-radius: 20px;
+				padding: 10px;
+				margin: 0px 0px 15px 0px;
+				display: flex;
+				transition: all 0.5s ease 0s;
+				cursor: default;
 
-        .order__itemInfoColumn {
-          flex: 0 1 25%;
-          font-size: 18px;
-          line-height: 24px;
-          cursor: default;
-          margin: 0px 20px 0px 0px;
-          &:last-child {
-            margin: 0px 0px 0px 0px;
-          }
+				.order__itemInfoColumn {
+					flex: 0 1 25%;
+					font-size: 18px;
+					line-height: 24px;
+					cursor: default;
+					margin: 0px 20px 0px 0px;
+					&:last-child {
+						margin: 0px 0px 0px 0px;
+					}
 
-          .order__itemInfoDate {
-          }
-          .order__status {
-            display: inline-block;
-            border-radius: 10px;
-            color: #222;
-            background-color: #fff;
-            padding: 5px;
-            font-size: 16px;
-            font-weight: 400;
-            margin-top: 10px;
-            margin-right: 10px;
-          }
-          .order__prepayment {
-            display: inline-block;
-            border-radius: 10px;
-            color: #222;
-            background-color: rgb(172, 172, 172);
-            padding: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            margin-right: 50px;
-          }
-          .order__need {
-            display: inline-block;
-            border-radius: 10px;
-            color: #ffffff;
-            background-color: rgb(156, 0, 0);
-            padding: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            margin-right: 50px;
-          }
-          .order__price {
-            display: inline-block;
-            border-radius: 10px;
-            color: #ffffff;
-            background-color: green;
-            padding: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            margin-right: 50px;
-          }
-          .userName {
-          }
-          .userPhone {
-          }
-          .remove__order {
-            cursor: pointer;
-          }
-        }
-      }
-      .order__row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: -10px -10px;
-        .order__rowColumn {
-          flex: 0 1 50%;
-          padding: 10px 10px;
+					.order__itemInfoDate {
+					}
+					.order__status {
+						display: inline-block;
+						border-radius: 10px;
+						color: #222;
+						background-color: #fff;
+						padding: 5px;
+						font-size: 16px;
+						font-weight: 400;
+						margin-top: 10px;
+						margin-right: 10px;
+					}
+					.order__prepayment {
+						display: inline-block;
+						border-radius: 10px;
+						color: #222;
+						background-color: rgb(172, 172, 172);
+						padding: 5px;
+						font-size: 16px;
+						margin-top: 10px;
+						margin-right: 50px;
+					}
+					.order__need {
+						display: inline-block;
+						border-radius: 10px;
+						color: #ffffff;
+						background-color: rgb(156, 0, 0);
+						padding: 5px;
+						font-size: 16px;
+						margin-top: 10px;
+						margin-right: 50px;
+					}
+					.order__price {
+						display: inline-block;
+						border-radius: 10px;
+						color: #ffffff;
+						background-color: green;
+						padding: 5px;
+						font-size: 16px;
+						margin-top: 10px;
+						margin-right: 50px;
+					}
+					.edit__button {
+						margin-top: 10px;
+						background-color: #222;
+						color: #ffffff;
+						padding: 7px 22px;
+						border-radius: 5px;
+						font-size: 16px;
+					}
+					.userName {
+					}
+					.userPhone {
+					}
+					.remove__order {
+						cursor: pointer;
+					}
+				}
+			}
+			.order__row {
+				display: flex;
+				flex-wrap: wrap;
+				margin: -10px -10px;
+				.order__rowColumn {
+					flex: 0 1 50%;
+					padding: 10px 10px;
 
-          .order__rowImg {
-            height: 100px;
-            border-radius: 15px;
-            overflow: hidden;
-            & img {
-              @include imageMin(cover);
-            }
-          }
-          .order__info {
-            position: absolute;
-            transform: scale(0);
-            transition: all 00.5s ease 0s;
-            opacity: 0;
-            visibility: hidden;
+					.order__rowImg {
+						height: 100px;
+						border-radius: 15px;
+						overflow: hidden;
+						& img {
+							@include imageMin(cover);
+						}
+					}
+					.order__info {
+						position: absolute;
+						transform: scale(0);
+						transition: all 00.5s ease 0s;
+						opacity: 0;
+						visibility: hidden;
 
-            .order__rowNameP {
-            }
-            .order__restaurant {
-            }
-            .order__famly {
-            }
-            .order__rowQuantity {
-            }
-            .order__rowQunaty {
-            }
-            .order__itemInfoColumn {
-              .comment__user {
-              }
-            }
-            .order__rowPrice {
-            }
-          }
-        }
-      }
-    }
-    .order__id {
-      position: absolute;
-      width: 80%;
-      left: 50%;
-      bottom: -20px;
-      transform: translate(-50%, 0px);
-      font-size: 16px;
-      color: #000000;
-      text-align: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
+						.order__rowNameP {
+						}
+						.order__restaurant {
+						}
+						.order__famly {
+						}
+						.order__rowQuantity {
+						}
+						.order__rowQunaty {
+						}
+						.order__itemInfoColumn {
+							.comment__user {
+							}
+						}
+						.order__rowPrice {
+						}
+					}
+				}
+			}
+		}
+		.order__id {
+			position: absolute;
+			width: 80%;
+			left: 50%;
+			bottom: -20px;
+			transform: translate(-50%, 0px);
+			font-size: 16px;
+			color: #000000;
+			text-align: center;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
 }
 
 // @media (max-width: 1440px) {
