@@ -10,7 +10,6 @@ import {
 	usePushImageMutation
 } from '@/lib/api/card.api'
 import { createFile } from '@/server api/createFile'
-import { pushCardImage } from '@/lib/api/api helper/api.heper'
 
 const ImageEdit: FC<{ cardId: number }> = ({ cardId }) => {
 	const { data } = useGetCardByIdQuery({ id: cardId })
