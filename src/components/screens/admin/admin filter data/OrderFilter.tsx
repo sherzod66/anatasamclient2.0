@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react'
+import { ChangeEvent, Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 import styles from './filter.module.scss'
 import { Select } from 'antd'
 import { IOrder } from '@/types/order.type'
@@ -8,6 +8,7 @@ type TInvitationProps = {
 	setData: Dispatch<SetStateAction<IOrder[] | undefined>>
 }
 const OrderFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
+	const [defaultType, setDefaultType] = useState<string>('PENDING')
 	const filterData = (e: ChangeEvent<HTMLInputElement>) => {
 		const copyData: IOrder[] = globalDate ? [...globalDate] : []
 		setData([
@@ -16,6 +17,10 @@ const OrderFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
 			)
 		])
 	}
+	useEffect(() => {
+		const copyData: IOrder[] = globalDate ? [...globalDate] : []
+		setData([...copyData.filter(status => status.status === defaultType)])
+	}, [globalDate])
 	const filterPaymentId = (e: ChangeEvent<HTMLInputElement>) => {
 		const copyData: IOrder[] = globalDate ? [...globalDate] : []
 		setData([...copyData.filter(order => order.payment_id.includes(e.target.value))])
@@ -25,6 +30,7 @@ const OrderFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
 		setData([...copyData.filter(order => String(order.id).includes(e.target.value))])
 	}
 	const handleChangeOrder = (value: string) => {
+		setDefaultType(value)
 		if (value === 'ALL') {
 			setData(globalDate)
 		} else {
