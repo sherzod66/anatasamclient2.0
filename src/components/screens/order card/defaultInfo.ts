@@ -2,7 +2,6 @@ import { IOrderNow } from '@/types/card.type'
 import { IInvitationInfo } from '@/types/invitationInfo.type'
 
 export const defaultInfo = (data: IOrderNow): IInvitationInfo => ({
-	id: 0,
 	comment: '',
 	date: '',
 	family: '',
