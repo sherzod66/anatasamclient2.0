@@ -1,4 +1,4 @@
-'use Client'
+'use client'
 import { TEditOrder } from '@/components/screens/admin/admin dashboard/order detaile/AdminOrder'
 import { Dispatch, FC, FormEvent, SetStateAction, useEffect, useState } from 'react'
 import styles from './EditOrder.module.scss'
@@ -166,7 +166,7 @@ const EditModalOrder: FC<TEditModalOrderProps> = ({ EditOrder, setEditOrder }) =
 														}
 														value={elem.time}
 														id={`time${elem.cardId}`}
-														type='time'
+														type='text'
 													/>
 												</div>
 											</Row>

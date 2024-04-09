@@ -3,6 +3,7 @@ import { apiSlice } from './api'
 import {
 	checkPay,
 	createOrder,
+	deleteInvitationInfo,
 	deleteOrder,
 	getAllOrders,
 	orderChangeStatus,
@@ -10,6 +11,7 @@ import {
 } from './api helper/api.heper'
 import { getToken } from './api helper/apiCookies.helper'
 import {
+	IDeleteOrderInfoQuery,
 	IEditOrderRequest,
 	IOrder,
 	IOrderChangeStatusRequest,
@@ -76,6 +78,17 @@ export const ordersApi = apiSlice.injectEndpoints({
 				}
 			}),
 			invalidatesTags: () => [{ type: 'Orders' }, { type: 'User' }]
+		}),
+		deleteInvitationInfo: builder.mutation<{ success: number }, IDeleteOrderInfoQuery>({
+			query: body => ({
+				url: deleteInvitationInfo(),
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${getToken()}`
+				},
+				body
+			}),
+			invalidatesTags: () => [{ type: 'Orders' }]
 		})
 	})
 })
@@ -86,5 +99,6 @@ export const {
 	usePaymentVerificationQuery,
 	useChangeStatusMutation,
 	useDeleteOrderMutation,
-	useEditOrderMutation
+	useEditOrderMutation,
+	useDeleteInvitationInfoMutation
 } = ordersApi

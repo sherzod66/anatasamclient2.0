@@ -8,7 +8,11 @@ import cn from 'clsx'
 import { lazyImage } from '@/util/lazyImage'
 import { imageLinkHelper } from '@/components/ui/card carousel/imageLink.halper'
 import { Button, Popconfirm, Select, message } from 'antd'
-import { useChangeStatusMutation, useDeleteOrderMutation } from '@/lib/api/orders.api'
+import {
+	useChangeStatusMutation,
+	useDeleteInvitationInfoMutation,
+	useDeleteOrderMutation
+} from '@/lib/api/orders.api'
 import { MdModeEdit } from 'react-icons/md'
 import { TEditOrder } from './AdminOrder'
 type TDetailProps = {
@@ -19,11 +23,13 @@ type TDetailProps = {
 const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 	const [active, setActive] = useState<boolean>(false)
 	const [deleteOrder, { data: deleteOrderData }] = useDeleteOrderMutation()
+	const [deleteInvitationInfo] = useDeleteInvitationInfoMutation()
 	const [statusChange, { isLoading, data: statusData }] = useChangeStatusMutation()
 	const popup = (event: MouseEvent) => {
 		if (
 			!(event.target as HTMLElement).closest('#itemC') &&
 			!(event.target as HTMLElement).closest('#info') &&
+			!(event.target as HTMLElement).closest('.ant-popover') &&
 			!(event.target as HTMLElement).closest('.rc-virtual-list')
 		) {
 			setActive(!active)
@@ -44,6 +50,11 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 	}
 	const confirm = () => {
 		deleteOrder({ id: data.id })
+	}
+	const confirmCardDelete = (infoId: number) => {
+		deleteInvitationInfo({ invitationInfoId: infoId, orderId: data.id })
+			.then(() => message.success('Successfully deleted'))
+			.catch(() => message.error('Error'))
 	}
 	useEffect(() => {
 		if (deleteOrderData) {
@@ -181,6 +192,15 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 										<div title='Стоимость пригласительной' className={styles.order__rowPrice}>
 											<strong>Price:</strong> {formatPrice(item.cardPrice)} Sum
 										</div>
+										<Popconfirm
+											title='Delete this card?'
+											description='Are you sure to delete this card?'
+											onConfirm={() => confirmCardDelete(item.id!)}
+											okText='Yes'
+											cancelText='No'
+										>
+											<Button danger>Delete</Button>
+										</Popconfirm>
 									</div>
 								</div>
 						  ))

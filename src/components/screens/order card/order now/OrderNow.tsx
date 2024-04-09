@@ -15,6 +15,7 @@ import { clickRedirect, handelMutationData } from './handelMutationData'
 import { useRouter } from 'next/navigation'
 import Loader from '@/components/ui/Loader/Loader'
 import { useTranslation } from 'react-i18next'
+import { message } from 'antd'
 
 const OrderNow: FC = () => {
 	const orderInfo = getOrderNowLocal()
@@ -36,7 +37,7 @@ const OrderNow: FC = () => {
 		e.preventDefault()
 		if (orderNowValidation(info) && paymentInfoValidation(paymentInfo)) {
 			//console.log(handelMutationData(info, paymentInfo))
-			createOrder(handelMutationData(info, paymentInfo))
+			createOrder(handelMutationData(info, paymentInfo)).catch(() => message.error('Error!'))
 		}
 	}
 	useEffect(() => {
@@ -134,15 +135,27 @@ const OrderNow: FC = () => {
 									</p>
 									<p>
 										<label htmlFor='time'>{t('time')}</label>
-										<input
-											id='time'
-											placeholder='18:00'
-											onChange={e => setInfo(prev => ({ ...prev, time: e.target.value }))}
-											value={info.time}
-											type='time'
-											name='time'
-											className={styles.writeOrder__time}
-										/>
+										{data?.isAdmin ? (
+											<input
+												id='time'
+												placeholder='18:00'
+												onChange={e => setInfo(prev => ({ ...prev, time: e.target.value }))}
+												value={info.time}
+												type='text'
+												name='time'
+												className={styles.writeOrder__time}
+											/>
+										) : (
+											<input
+												id='time'
+												placeholder='18:00'
+												onChange={e => setInfo(prev => ({ ...prev, time: e.target.value }))}
+												value={info.time}
+												type='time'
+												name='time'
+												className={styles.writeOrder__time}
+											/>
+										)}
 									</p>
 								</div>
 								<label htmlFor='restaurant'>{t('restaurant')}</label>

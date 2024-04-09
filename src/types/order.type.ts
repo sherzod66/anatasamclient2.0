@@ -60,3 +60,8 @@ export interface IEditOrderRequest {
 	orderPrice: number
 	invitationInfo: IInvitationInfo[]
 }
+
+export interface IDeleteOrderInfoQuery {
+	orderId: number
+	invitationInfoId: number
+}
