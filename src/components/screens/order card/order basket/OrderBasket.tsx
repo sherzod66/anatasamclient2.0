@@ -118,17 +118,31 @@ const OrderBasket: FC = () => {
 										</p>
 										<p>
 											<label htmlFor={`${info.cardId}-time`}>{t('time')}</label>
-											<input
-												id={`${info.cardId}-time`}
-												placeholder='18:00'
-												onChange={e =>
-													changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
-												}
-												value={info.time}
-												type='time'
-												name='time'
-												className={styles.writeOrder__time}
-											/>
+											{user?.isAdmin ? (
+												<input
+													id={`${info.cardId}-time`}
+													placeholder='18:00'
+													onChange={e =>
+														changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+													}
+													value={info.time}
+													type='text'
+													name='time'
+													className={styles.writeOrder__time}
+												/>
+											) : (
+												<input
+													id={`${info.cardId}-time`}
+													placeholder='18:00'
+													onChange={e =>
+														changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+													}
+													value={info.time}
+													type='time'
+													name='time'
+													className={styles.writeOrder__time}
+												/>
+											)}
 										</p>
 									</div>
 									<label htmlFor={`${info.cardId}-restaurant`}>{t('restaurant')}</label>
