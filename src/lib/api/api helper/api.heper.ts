@@ -18,6 +18,7 @@ export const updateCard = (): string => '/cards/update'
 export const getCardByTag = (): string => '/cards/get-cards-by-tag'
 export const getCardById = (): string => '/cards/get-by-id'
 export const deleteInvitationInfo = (): string => '/orders/delete-card-info'
+export const changeOrderPrice = (): string => '/orders/change-price'
 
 export const electronicGetAll = (): string => '/electronic'
 export const electronicCreate = (): string => '/electronic/create'

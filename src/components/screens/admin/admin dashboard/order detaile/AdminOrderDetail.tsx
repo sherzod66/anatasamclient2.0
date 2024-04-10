@@ -7,21 +7,30 @@ import { formatPrice } from '@/util/formatPrice'
 import cn from 'clsx'
 import { lazyImage } from '@/util/lazyImage'
 import { imageLinkHelper } from '@/components/ui/card carousel/imageLink.halper'
-import { Button, Popconfirm, Select, message } from 'antd'
+import { Button, FloatButton, Input, Popconfirm, Select, message } from 'antd'
 import {
+	useChangePriceMutation,
 	useChangeStatusMutation,
 	useDeleteInvitationInfoMutation,
 	useDeleteOrderMutation
 } from '@/lib/api/orders.api'
-import { MdModeEdit } from 'react-icons/md'
+import { MdEdit, MdModeEdit } from 'react-icons/md'
 import { TEditOrder } from './AdminOrder'
 type TDetailProps = {
 	data: IOrder
 	setEditOrder: Dispatch<SetStateAction<TEditOrder>>
 }
-
+type TChangePrice = {
+	isShow: boolean
+	value: string
+}
 const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 	const [active, setActive] = useState<boolean>(false)
+	const [changeOrderPrice] = useChangePriceMutation()
+	const [changePrice, setChangePrice] = useState<TChangePrice>({
+		isShow: false,
+		value: String(data.orderPrice)
+	})
 	const [deleteOrder, { data: deleteOrderData }] = useDeleteOrderMutation()
 	const [deleteInvitationInfo] = useDeleteInvitationInfoMutation()
 	const [statusChange, { isLoading, data: statusData }] = useChangeStatusMutation()
@@ -65,6 +74,14 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 			}
 		}
 	}, [deleteOrderData])
+	const changeOrderHandler = () => {
+		changeOrderPrice({ orderId: data.id, price: +changePrice.value })
+			.then(() => {
+				message.success('Successfully changed')
+				setChangePrice(prev => ({ ...prev, isShow: false }))
+			})
+			.catch(() => message.error('Error'))
+	}
 	return (
 		<div
 			onClick={popup}
@@ -100,7 +117,23 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 								NeedPaid: {formatPrice(data.orderPrice - data.paid)} Sum
 							</div>
 							<div title='Полная стоимость заказа' className={styles.order__price}>
-								Total amount: {formatPrice(data.orderPrice)} Sum
+								<p
+									onClick={() => setChangePrice(prev => ({ ...prev, isShow: !changePrice.isShow }))}
+								>
+									Total amount: {formatPrice(data.orderPrice)} Sum <MdEdit />
+								</p>
+								{changePrice.isShow && (
+									<>
+										<input
+											value={changePrice.value}
+											onChange={e => setChangePrice(prev => ({ ...prev, value: e.target.value }))}
+											type='number'
+										/>
+										<button onClick={changeOrderHandler} type='button'>
+											Change
+										</button>
+									</>
+								)}
 							</div>
 						</div>
 						<div className={styles.order__itemInfoColumn}>
