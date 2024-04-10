@@ -27,12 +27,13 @@ const OrderQuantityCount: FC<TCardProps> = ({
 	allInvitationInfo
 }) => {
 	const [count, setCount] = useState<string>(String(invitationInfo.quantity))
+	const [fullQuantity, setFullQuantity] = useState<number>(card.quantity + invitationInfo.quantity)
 	const [focus, setFocus] = useState<boolean>(true)
 	useEffect(() => onBlur(), [])
 	const onBlur = () => {
 		setFocus(!focus)
 		if (card.minOrderQuantity > +count) setCount(String(card.minOrderQuantity))
-		if (card.quantity < +count) setCount(String(card.quantity))
+		if (fullQuantity < +count) setCount(String(fullQuantity))
 	}
 	useEffect(() => changeEventOrderQuantity(index, count, allInvitationInfo, setInvitation), [count])
 	return (
@@ -42,7 +43,7 @@ const OrderQuantityCount: FC<TCardProps> = ({
 				styles.card__quantity_input,
 				{ [styles.active]: focus },
 				{
-					[styles.error]: +count < card.minOrderQuantity || +count > card.quantity
+					[styles.error]: +count < card.minOrderQuantity || +count > fullQuantity
 				}
 			)}
 		>
@@ -54,12 +55,12 @@ const OrderQuantityCount: FC<TCardProps> = ({
 				value={count}
 				type='number'
 				min={card.minOrderQuantity}
-				max={card.quantity}
+				max={card.quantity + invitationInfo.quantity}
 				inputMode='numeric'
 				onFocus={() => setFocus(!focus)}
 				onBlur={onBlur}
 			/>{' '}
-			<button onClick={() => plusCount(count, setCount, card.quantity)} type='button'>
+			<button onClick={() => plusCount(count, setCount, fullQuantity)} type='button'>
 				<FiPlus />
 			</button>
 		</div>
