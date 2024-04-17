@@ -28,7 +28,7 @@ export const useOrderBasketInfo = () => {
 		orderPrice: 0,
 		paymentMethod: user ? (user.isAdmin ? 'CASH' : 'UZCARD') : 'CASH',
 		userName: '',
-		userPhone: '',
+		userPhone: user ? (user.isAdmin ? '+998' : user.phoneNumber) : '',
 		paid: 0,
 		basket: true
 	})

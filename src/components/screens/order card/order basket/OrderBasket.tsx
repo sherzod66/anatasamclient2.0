@@ -192,7 +192,7 @@ const OrderBasket: FC = () => {
 										paymentMethod: e.target.value as IPayment
 									}))
 								}
-								value={user?.isAdmin ? 'CASH' : 'UZCARD'}
+								value={paymentInfo.paymentMethod}
 								name='chose-card'
 								id='payment-method'
 							>

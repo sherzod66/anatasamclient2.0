@@ -29,7 +29,7 @@ const OrderNow: FC = () => {
 		orderPrice: orderInfo.price * orderInfo.orderQuantity,
 		paymentMethod: data ? (data.isAdmin ? 'CASH' : 'UZCARD') : 'CASH',
 		userName: data ? (data.isAdmin ? '' : data.name ? data.name : 'unknown') : '',
-		userPhone: data ? (data.isAdmin ? '' : data.phoneNumber) : '',
+		userPhone: data ? (data.isAdmin ? '+998' : data.phoneNumber) : '',
 		paid: 0,
 		basket: false
 	})
@@ -208,7 +208,7 @@ const OrderNow: FC = () => {
 									}))
 								}
 								name='chose-card'
-								value={data?.isAdmin ? 'CASH' : 'UZCARD'}
+								value={paymentInfo.paymentMethod}
 								id='payment-method'
 							>
 								<option value='UZCARD'>UZCARD</option>
@@ -262,7 +262,7 @@ const OrderNow: FC = () => {
 										}))
 									}
 									placeholder='Paid'
-									type='number'
+									type='text'
 									className={styles.writeOrder__input}
 								/>
 								<button
@@ -277,7 +277,7 @@ const OrderNow: FC = () => {
 						<p className={styles.writeOrder__result_price}>
 							{t('total')}:{' '}
 							<span>
-								{formatPrice(orderInfo.price * orderInfo.orderQuantity)} {t('sum')}
+								{formatPrice(paymentInfo.orderPrice)} {t('sum')}
 							</span>
 						</p>
 						<button type='submit' className={styles.writeOrder__button}>
