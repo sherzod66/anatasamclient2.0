@@ -9,6 +9,7 @@ import { lazyImage } from '@/util/lazyImage'
 import { imageLinkHelper } from '@/components/ui/card carousel/imageLink.halper'
 import { Button, FloatButton, Input, Popconfirm, Select, message } from 'antd'
 import {
+	useChangePhoneNumberMutation,
 	useChangePriceMutation,
 	useChangeStatusMutation,
 	useDeleteInvitationInfoMutation,
@@ -23,13 +24,16 @@ type TDetailProps = {
 type TChangePrice = {
 	isShow: boolean
 	value: string
+	phoneNumber: string
 }
 const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 	const [active, setActive] = useState<boolean>(false)
 	const [changeOrderPrice] = useChangePriceMutation()
+	const [changeOrderPhoneNumber] = useChangePhoneNumberMutation()
 	const [changePrice, setChangePrice] = useState<TChangePrice>({
 		isShow: false,
-		value: String(data.orderPrice)
+		value: String(data.orderPrice),
+		phoneNumber: data.userPhone
 	})
 	const [deleteOrder, { data: deleteOrderData }] = useDeleteOrderMutation()
 	const [deleteInvitationInfo] = useDeleteInvitationInfoMutation()
@@ -81,6 +85,16 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 				setChangePrice(prev => ({ ...prev, isShow: false }))
 			})
 			.catch(() => message.error('Error'))
+	}
+	const changePhoneNumberHandler = () => {
+		if (data.userPhone !== changePrice.phoneNumber) {
+			changeOrderPhoneNumber({ orderId: data.id, phoneNumber: changePrice.phoneNumber })
+				.then(() => {
+					message.success('Successfully changed')
+					setChangePrice(prev => ({ ...prev, isShow: false }))
+				})
+				.catch(() => message.error('Error'))
+		}
 	}
 	return (
 		<div
@@ -140,9 +154,26 @@ const AdminOrderDetail: FC<TDetailProps> = ({ data, setEditOrder }) => {
 							<p>
 								Client name: <strong>{data.userName}</strong>
 							</p>
-							<p>
-								Client number: <strong>{data.userPhone}</strong>
-							</p>
+							{data.payment_id.length > 11 ? (
+								<>
+									<span>Client number:</span>
+									<Input
+										onChange={e =>
+											setChangePrice(prev => ({ ...prev, phoneNumber: e.target.value }))
+										}
+										value={changePrice.phoneNumber}
+									/>
+									{data.userPhone !== changePrice.phoneNumber && (
+										<Button onClick={changePhoneNumberHandler} style={{ marginTop: '5px' }}>
+											Edit
+										</Button>
+									)}
+								</>
+							) : (
+								<p>
+									Client number: <strong>{data.userPhone}</strong>
+								</p>
+							)}
 							<p>
 								Payment method: <strong>{data.paymentMethod}</strong>
 							</p>

@@ -19,6 +19,7 @@ export const getCardByTag = (): string => '/cards/get-cards-by-tag'
 export const getCardById = (): string => '/cards/get-by-id'
 export const deleteInvitationInfo = (): string => '/orders/delete-card-info'
 export const changeOrderPrice = (): string => '/orders/change-price'
+export const changeOrderPhoneNumber = (): string => '/orders/change-phone-number'
 
 export const electronicGetAll = (): string => '/electronic'
 export const electronicCreate = (): string => '/electronic/create'

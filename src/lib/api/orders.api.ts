@@ -1,6 +1,7 @@
 import { IOrderInfo } from '@/types/invitationInfo.type'
 import { apiSlice } from './api'
 import {
+	changeOrderPhoneNumber,
 	changeOrderPrice,
 	checkPay,
 	createOrder,
@@ -101,6 +102,17 @@ export const ordersApi = apiSlice.injectEndpoints({
 				body
 			}),
 			invalidatesTags: () => [{ type: 'Orders' }]
+		}),
+		changePhoneNumber: builder.mutation<IOrder, { orderId: number; phoneNumber: string }>({
+			query: body => ({
+				url: changeOrderPhoneNumber(),
+				method: 'PATCH',
+				headers: {
+					Authorization: `Bearer ${getToken()}`
+				},
+				body
+			}),
+			invalidatesTags: () => [{ type: 'Orders' }]
 		})
 	})
 })
@@ -113,5 +125,6 @@ export const {
 	useDeleteOrderMutation,
 	useEditOrderMutation,
 	useDeleteInvitationInfoMutation,
-	useChangePriceMutation
+	useChangePriceMutation,
+	useChangePhoneNumberMutation
 } = ordersApi
