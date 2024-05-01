@@ -39,7 +39,7 @@ export const useOrderBasketInfo = () => {
 				...prev,
 				orderPrice: countBasketPrice(basket ? basket : []),
 				userName: user ? (user.isAdmin ? '' : user.name ? user.name : 'unknown') : '',
-				userPhone: user ? (user.isAdmin ? '' : user.phoneNumber) : ''
+				userPhone: user ? (user.isAdmin ? '+998' : user.phoneNumber) : ''
 			}))
 		}
 	}, [data])
@@ -48,7 +48,7 @@ export const useOrderBasketInfo = () => {
 			setPaymentInfo(prev => ({
 				...prev,
 				userName: user ? (user.isAdmin ? '' : user.name ? user.name : 'unknown') : '',
-				userPhone: user ? (user.isAdmin ? '' : user.phoneNumber) : ''
+				userPhone: user ? (user.isAdmin ? '+998' : user.phoneNumber) : ''
 			})),
 		[user]
 	)
