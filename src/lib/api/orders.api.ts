@@ -8,6 +8,7 @@ import {
 	deleteInvitationInfo,
 	deleteOrder,
 	getAllOrders,
+	getMinOrders,
 	orderChangeStatus,
 	orderEdit
 } from './api helper/api.heper'
@@ -26,7 +27,7 @@ export const ordersApi = apiSlice.injectEndpoints({
 		getOrders: builder.query<IOrder[], null>({
 			query: () => ({
 				method: 'GET',
-				url: getAllOrders(),
+				url: getMinOrders(),
 				headers: {
 					Authorization: `Bearer ${getToken()}`
 				},

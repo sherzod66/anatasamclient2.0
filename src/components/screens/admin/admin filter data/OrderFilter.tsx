@@ -3,19 +3,20 @@ import styles from './filter.module.scss'
 import { Select } from 'antd'
 import { IOrder } from '@/types/order.type'
 import { orderSelectOption } from './orderSelectOption'
+import { SearchOrder } from '@/server api/search'
 type TInvitationProps = {
 	globalDate: IOrder[] | undefined
 	setData: Dispatch<SetStateAction<IOrder[] | undefined>>
 }
 const OrderFilter: FC<TInvitationProps> = ({ globalDate, setData }) => {
 	const [defaultType, setDefaultType] = useState<string>('PENDING')
-	const filterData = (e: ChangeEvent<HTMLInputElement>) => {
-		const copyData: IOrder[] = globalDate ? [...globalDate] : []
-		setData([
-			...copyData.filter(order =>
-				order.invitationInfo[0].luckyOnes.toLowerCase().includes(e.target.value.toLowerCase())
-			)
-		])
+	const filterData = async (e: ChangeEvent<HTMLInputElement>) => {
+		if (e.target.value.length > 2) {
+			const search = await SearchOrder(e.target.value)
+			setData([...search])
+		} else {
+			setData(globalDate ? [...globalDate] : [])
+		}
 	}
 	useEffect(() => {
 		const copyData: IOrder[] = globalDate ? [...globalDate] : []
