@@ -12,6 +12,7 @@ import { notification } from 'antd'
 import { useRouter } from 'next/navigation'
 import { useActions } from '@/hooks/useActions'
 import { useTranslation } from 'react-i18next'
+import { paymentInfoValidation } from '../order now/orderNowValidation'
 
 export const useOrderBasketInfo = () => {
 	const { data, isLoading } = useGetBasketQuery(undefined)
@@ -65,7 +66,7 @@ export const useOrderBasketInfo = () => {
 	}, [response])
 	const handelSubmitForm = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		if (orderBasketValidation(invitationInfo)) {
+		if (orderBasketValidation(invitationInfo) && paymentInfoValidation(paymentInfo)) {
 			if (paymentInfo.orderPrice >= 1000) {
 				createOrder(handelMultiMutationData(invitationInfo, paymentInfo))
 			}
