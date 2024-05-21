@@ -38,149 +38,150 @@ const OrderBasket: FC = () => {
 						<div onClick={copyInfo} className={styles.copy}>
 							<IoIosCopy />
 						</div>
-						{invitationInfo.map((info, index) => (
-							<div key={info.cardId} className={styles.writeOrder__column}>
-								<div className={styles.writeOrder__item}>
-									<h2>{t('checked_card')}</h2>
-									<div className={styles.writeOrder__image}>
-										<img src={imageLik(info.cardImage[0])} alt={'image not found'} />
-									</div>
-									<h4>
-										{t('one_price')}: {formatPrice(info.cardPrice)}
-									</h4>
-									<h2>
-										{t('quantity')}: {info.quantity}
-									</h2>
-									<div className={styles.writeOrder__lang}>
-										<p>{t('lang')}:</p>
-										<span>
-											<input
-												id='lang-id'
-												type='radio'
-												value='RU'
-												defaultChecked
-												name={data![index].name}
-												onChange={e =>
-													changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
-												}
-											/>
-											RU
-										</span>
-										<span>
-											<input
-												id='lang-id'
-												type='radio'
-												value='UZ'
-												name={data![index].name}
-												onChange={e =>
-													changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
-												}
-											/>
-											UZ
-										</span>
-										<span>
-											<input
-												id='lang-id'
-												type='radio'
-												value='EN'
-												name={data![index].name}
-												onChange={e =>
-													changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
-												}
-											/>
-											EN
-										</span>
-									</div>
-									<label htmlFor={`${info.cardId}-name`}>{t('luckyOnes')}</label>
-									<input
-										className={styles.writeOrder__input}
-										id={`${info.cardId}-name`}
-										placeholder='Саша и Таня'
-										onChange={e =>
-											changeEvent(index, e, invitationInfo, 'luckyOnes', setInvitationInfo)
-										}
-										value={info.luckyOnes}
-										type='text'
-										name='name'
-									/>
-									<label htmlFor={`${info.cardId}-date`}>{t('time_and_date')}</label>
-									<div className={styles.writeOrder__data}>
-										<p>
-											<input
-												className={styles.writeOrder__dataMonth}
-												id={`${info.cardId}-date`}
-												onChange={e =>
-													changeEvent(index, e, invitationInfo, 'date', setInvitationInfo)
-												}
-												value={info.date}
-												type='date'
-											/>
-										</p>
-										<p>
-											<label htmlFor={`${info.cardId}-time`}>{t('time')}</label>
-											{user?.isAdmin ? (
+						{invitationInfo.length > 0 &&
+							invitationInfo.map((info, index) => (
+								<div key={info.cardId} className={styles.writeOrder__column}>
+									<div className={styles.writeOrder__item}>
+										<h2>{t('checked_card')}</h2>
+										<div className={styles.writeOrder__image}>
+											<img src={imageLik(info.cardImage[0])} alt={'image not found'} />
+										</div>
+										<h4>
+											{t('one_price')}: {formatPrice(info.cardPrice)}
+										</h4>
+										<h2>
+											{t('quantity')}: {info.quantity}
+										</h2>
+										<div className={styles.writeOrder__lang}>
+											<p>{t('lang')}:</p>
+											<span>
 												<input
-													id={`${info.cardId}-time`}
-													placeholder='18:00'
+													id='lang-id'
+													type='radio'
+													value='RU'
+													defaultChecked
+													name={data![index].name}
 													onChange={e =>
-														changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
 													}
-													value={info.time}
-													type='text'
-													name='time'
-													className={styles.writeOrder__time}
 												/>
-											) : (
+												RU
+											</span>
+											<span>
 												<input
-													id={`${info.cardId}-time`}
-													placeholder='18:00'
+													id='lang-id'
+													type='radio'
+													value='UZ'
+													name={data![index].name}
 													onChange={e =>
-														changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
 													}
-													value={info.time}
-													type='time'
-													name='time'
-													className={styles.writeOrder__time}
 												/>
-											)}
-										</p>
-									</div>
-									<label htmlFor={`${info.cardId}-restaurant`}>{t('restaurant')}</label>
-									<input
-										id={`${info.cardId}-restaurant`}
-										type='text'
-										value={info.restaurant}
-										onChange={e =>
-											changeEvent(index, e, invitationInfo, 'restaurant', setInvitationInfo)
-										}
-										className={styles.writeOrder__input}
-									/>
+												UZ
+											</span>
+											<span>
+												<input
+													id='lang-id'
+													type='radio'
+													value='EN'
+													name={data![index].name}
+													onChange={e =>
+														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
+													}
+												/>
+												EN
+											</span>
+										</div>
+										<label htmlFor={`${info.cardId}-name`}>{t('luckyOnes')}</label>
+										<input
+											className={styles.writeOrder__input}
+											id={`${info.cardId}-name`}
+											placeholder='Саша и Таня'
+											onChange={e =>
+												changeEvent(index, e, invitationInfo, 'luckyOnes', setInvitationInfo)
+											}
+											value={info.luckyOnes}
+											type='text'
+											name='name'
+										/>
+										<label htmlFor={`${info.cardId}-date`}>{t('time_and_date')}</label>
+										<div className={styles.writeOrder__data}>
+											<p>
+												<input
+													className={styles.writeOrder__dataMonth}
+													id={`${info.cardId}-date`}
+													onChange={e =>
+														changeEvent(index, e, invitationInfo, 'date', setInvitationInfo)
+													}
+													value={info.date}
+													type='date'
+												/>
+											</p>
+											<p>
+												<label htmlFor={`${info.cardId}-time`}>{t('time')}</label>
+												{user?.isAdmin ? (
+													<input
+														id={`${info.cardId}-time`}
+														placeholder='18:00'
+														onChange={e =>
+															changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+														}
+														value={info.time}
+														type='text'
+														name='time'
+														className={styles.writeOrder__time}
+													/>
+												) : (
+													<input
+														id={`${info.cardId}-time`}
+														placeholder='18:00'
+														onChange={e =>
+															changeEvent(index, e, invitationInfo, 'time', setInvitationInfo)
+														}
+														value={info.time}
+														type='time'
+														name='time'
+														className={styles.writeOrder__time}
+													/>
+												)}
+											</p>
+										</div>
+										<label htmlFor={`${info.cardId}-restaurant`}>{t('restaurant')}</label>
+										<input
+											id={`${info.cardId}-restaurant`}
+											type='text'
+											value={info.restaurant}
+											onChange={e =>
+												changeEvent(index, e, invitationInfo, 'restaurant', setInvitationInfo)
+											}
+											className={styles.writeOrder__input}
+										/>
 
-									<label htmlFor={`${info.cardId}-family`}>{t('family')}</label>
-									<input
-										id={`${info.cardId}-family`}
-										type='text'
-										onChange={e =>
-											changeEvent(index, e, invitationInfo, 'family', setInvitationInfo)
-										}
-										value={info.family}
-										name='family'
-										className={styles.writeOrder__input}
-									/>
-									<label htmlFor={`${info.cardId}-comment`}>{t('comment')}</label>
-									<textarea
-										className={styles.writeOrder__textarea}
-										placeholder='Пригласительное должно быть готово уже через 2 дня'
-										onChange={e =>
-											changeEvent(index, e, invitationInfo, 'comment', setInvitationInfo)
-										}
-										value={info.comment}
-										name='comment'
-										id={`${info.cardId}-comment`}
-									/>
+										<label htmlFor={`${info.cardId}-family`}>{t('family')}</label>
+										<input
+											id={`${info.cardId}-family`}
+											type='text'
+											onChange={e =>
+												changeEvent(index, e, invitationInfo, 'family', setInvitationInfo)
+											}
+											value={info.family}
+											name='family'
+											className={styles.writeOrder__input}
+										/>
+										<label htmlFor={`${info.cardId}-comment`}>{t('comment')}</label>
+										<textarea
+											className={styles.writeOrder__textarea}
+											placeholder='Пригласительное должно быть готово уже через 2 дня'
+											onChange={e =>
+												changeEvent(index, e, invitationInfo, 'comment', setInvitationInfo)
+											}
+											value={info.comment}
+											name='comment'
+											id={`${info.cardId}-comment`}
+										/>
+									</div>
 								</div>
-							</div>
-						))}
+							))}
 					</div>
 					<div className={styles.writeOrder__result}>
 						<div className={styles.writeOrder__payment_method}>

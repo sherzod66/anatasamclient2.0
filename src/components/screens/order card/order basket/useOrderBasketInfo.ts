@@ -35,13 +35,15 @@ export const useOrderBasketInfo = () => {
 	})
 	useEffect(() => {
 		if (data) {
-			setInvitationInfo(refactorQueryData(data, basket ? basket : []))
-			setPaymentInfo(prev => ({
-				...prev,
-				orderPrice: countBasketPrice(basket ? basket : []),
-				userName: user ? (user.isAdmin ? '' : user.name ? user.name : 'unknown') : '',
-				userPhone: user ? (user.isAdmin ? '+998' : user.phoneNumber) : ''
-			}))
+			if (data.length > 0) {
+				setInvitationInfo(refactorQueryData(data, basket ? basket : []))
+				setPaymentInfo(prev => ({
+					...prev,
+					orderPrice: countBasketPrice(basket ? basket : []),
+					userName: user ? (user.isAdmin ? '' : user.name ? user.name : 'unknown') : '',
+					userPhone: user ? (user.isAdmin ? '+998' : user.phoneNumber) : ''
+				}))
+			}
 		}
 	}, [data])
 	useEffect(
