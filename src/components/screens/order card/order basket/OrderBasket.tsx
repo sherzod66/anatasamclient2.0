@@ -60,7 +60,7 @@ const OrderBasket: FC = () => {
 													type='radio'
 													value='RU'
 													defaultChecked
-													name={data![index].name}
+													name={data && data.length > 0 ? data[index].name : ''}
 													onChange={e =>
 														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
 													}
@@ -72,7 +72,7 @@ const OrderBasket: FC = () => {
 													id='lang-id'
 													type='radio'
 													value='UZ'
-													name={data![index].name}
+													name={data && data.length > 0 ? data[index].name : ''}
 													onChange={e =>
 														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
 													}
@@ -84,7 +84,7 @@ const OrderBasket: FC = () => {
 													id='lang-id'
 													type='radio'
 													value='EN'
-													name={data![index].name}
+													name={data && data.length > 0 ? data[index].name : ''}
 													onChange={e =>
 														changeEvent(index, e, invitationInfo, 'lang', setInvitationInfo)
 													}
