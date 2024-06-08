@@ -9,6 +9,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@ducanh2912/next-pwa": "^10.2.7",
 		"@pbe/react-yandex-maps": "^1.2.5",
 		"@reduxjs/toolkit": "^2.0.1",
 		"@types/react-redux": "^7.1.33",

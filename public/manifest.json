@@ -1,0 +1,462 @@
+{
+	"id": "956416",
+	"theme_color": "#FFFFFF",
+	"background_color": "#FFFFFF",
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/",
+	"name": "Anatasam",
+	"short_name": "Anata",
+	"description": "natasam Invitation \u044d\u0442\u043e \u043e\u0434\u043d\u0430 \u0438\u0437 \u0441\u0430\u043c\u044b\u0445 \u043b\u0438\u0434\u0438\u0440\u0443\u044e\u0449\u0438\u0445 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u0439 \u0432 \u0423\u0437\u0431\u0435\u043a\u0438\u0441\u0442\u0430\u043d\u0435 \u043f\u043e \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0441\u0442\u0432\u0443 \u0438 \u043f\u0435\u0447\u0430\u0442\u0438 \u043f\u0440\u0438\u0433\u043b\u0430\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0445 \u0438 \u043f\u043e\u0437\u0434\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0445 \u043e\u0442\u043a\u0440\u044b\u0442\u043e\u043a, \u043d\u0430\u0448\u0430 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u0435\u0442 \u0438 \u0440\u0430\u0434\u0443\u0435\u0442 \u043d\u0430\u0448\u0438\u0445 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u0431\u043e\u043b\u0435\u0435 15 \u043b\u0435\u0442 \u0438   \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0435\u0442 \u0441\u043e\u0432\u0435\u0440\u0448\u0435\u043d\u0441\u0442\u0432\u043e\u0432\u0430\u0442\u044c \u0430\u0441\u0441\u043e\u0440\u0442\u0438\u043c\u0435\u043d\u0442 \u0441\u0432\u043e\u0435\u0439 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438 \u0438 \u043f\u0440\u0438\u0432\u043b\u0435\u043a\u0430\u0442\u044c \u0431\u043e\u043b\u0435\u0435 \u0448\u0438\u0440\u043e\u043a\u0443\u044e \u0430\u0443\u0434\u0438\u0442\u043e\u0440\u0438\u044e \u0437\u0430 \u0441\u0447\u0435\u0442 \u043f\u043e\u0432\u044b\u0448\u0435\u043d\u0438\u044f \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430, \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u044f \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u0442\u044c \u0441\u0432\u043e\u044e \u043e\u0442\u0440\u0430\u0441\u043b\u044c. \u041d\u0430\u0448\u0430 \u043a\u043e\u043c\u043f\u0430\u043d\u0438\u044f \u043e\u0442\u043b\u0438\u0447\u0430\u0435\u0442\u0441\u044f \u043e\u0434\u043d\u043e\u0439 \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e\u0441\u0442\u044c\u044e, \u0442\u0435\u043c \u0447\u0442\u043e \u0443 \u043d\u0430\u0441 \u043d\u0435\u0442 \u0433\u0440\u0430\u043d\u0438\u0446 \u043c\u044b \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u043c \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c \u043d\u0430\u0448\u0443 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u044e \u0434\u0430\u0436\u0435 \u0432 \u0441\u0430\u043c\u044b\u0435 \u0434\u0430\u043b\u044c\u043d\u0438\u0435 \u0443\u0433\u043e\u043b\u043a\u0438 \u043c\u0438\u0440\u0430. \u041c\u044b \u043f\u0435\u0447\u0430\u0442\u0430\u043b\u0438 \u043f\u0440\u0438\u0433\u043b\u0430\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0434\u043b\u044f \u043d\u0430\u0448\u0438\u0445 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u0438\u0437 \u0410\u043c\u0435\u0440\u0438\u043a\u0438, \u0418\u0442\u0430\u043b\u0438\u0438, \u0424\u0440\u0430\u043d\u0446\u0438\u0438, \u0412\u0435\u043b\u0438\u043a\u043e\u0431\u0440\u0438\u0442\u0430\u043d\u0438\u0438, \u0420\u043e\u0441\u0441\u0438\u0438 \u0438 \u043c\u043d\u043e\u0433\u043e \u0434\u0440\u0443\u0433\u0438\u0445 \u0441\u0442\u0440\u0430\u043d \u0438 \u043d\u0430 \u0441\u0430\u043c\u044b\u0445 \u0440\u0430\u0437\u043d\u044b\u0445 \u044f\u0437\u044b\u043a\u0430\u0445 \u043c\u0438\u0440\u0430. \u041c\u044b \u0433\u043e\u0440\u0434\u0438\u043c\u0441\u044f \u0437\u0430 \u0442\u043e, \u0447\u0442\u043e \u043c\u044b \u0432\u0441\u0435\u0433\u0434\u0430 \u0433\u043e\u0442\u043e\u0432\u0438\u043c \u043b\u0443\u0447\u0448\u0435\u0435, \u044d\u0442\u043e \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0439 \u0446\u0435\u043b\u044c\u044e Anatasam Invitation, \u0438 \u0442\u0430\u043a \u0431\u0443\u0434\u0435\u0442 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0442\u044c\u0441\u044f \u0438 \u0432 \u0431\u0443\u0434\u0443\u0449\u0435\u043c.",
+	"icons": [
+		{
+			"src": "windows11/SmallTile.scale-100.png",
+			"sizes": "71x71"
+		},
+		{
+			"src": "windows11/SmallTile.scale-125.png",
+			"sizes": "89x89"
+		},
+		{
+			"src": "windows11/SmallTile.scale-150.png",
+			"sizes": "107x107"
+		},
+		{
+			"src": "windows11/SmallTile.scale-200.png",
+			"sizes": "142x142"
+		},
+		{
+			"src": "windows11/SmallTile.scale-400.png",
+			"sizes": "284x284"
+		},
+		{
+			"src": "windows11/Square150x150Logo.scale-100.png",
+			"sizes": "150x150"
+		},
+		{
+			"src": "windows11/Square150x150Logo.scale-125.png",
+			"sizes": "188x188"
+		},
+		{
+			"src": "windows11/Square150x150Logo.scale-150.png",
+			"sizes": "225x225"
+		},
+		{
+			"src": "windows11/Square150x150Logo.scale-200.png",
+			"sizes": "300x300"
+		},
+		{
+			"src": "windows11/Square150x150Logo.scale-400.png",
+			"sizes": "600x600"
+		},
+		{
+			"src": "windows11/Wide310x150Logo.scale-100.png",
+			"sizes": "310x150"
+		},
+		{
+			"src": "windows11/Wide310x150Logo.scale-125.png",
+			"sizes": "388x188"
+		},
+		{
+			"src": "windows11/Wide310x150Logo.scale-150.png",
+			"sizes": "465x225"
+		},
+		{
+			"src": "windows11/Wide310x150Logo.scale-200.png",
+			"sizes": "620x300"
+		},
+		{
+			"src": "windows11/Wide310x150Logo.scale-400.png",
+			"sizes": "1240x600"
+		},
+		{
+			"src": "windows11/LargeTile.scale-100.png",
+			"sizes": "310x310"
+		},
+		{
+			"src": "windows11/LargeTile.scale-125.png",
+			"sizes": "388x388"
+		},
+		{
+			"src": "windows11/LargeTile.scale-150.png",
+			"sizes": "465x465"
+		},
+		{
+			"src": "windows11/LargeTile.scale-200.png",
+			"sizes": "620x620"
+		},
+		{
+			"src": "windows11/LargeTile.scale-400.png",
+			"sizes": "1240x1240"
+		},
+		{
+			"src": "windows11/Square44x44Logo.scale-100.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "windows11/Square44x44Logo.scale-125.png",
+			"sizes": "55x55"
+		},
+		{
+			"src": "windows11/Square44x44Logo.scale-150.png",
+			"sizes": "66x66"
+		},
+		{
+			"src": "windows11/Square44x44Logo.scale-200.png",
+			"sizes": "88x88"
+		},
+		{
+			"src": "windows11/Square44x44Logo.scale-400.png",
+			"sizes": "176x176"
+		},
+		{
+			"src": "windows11/StoreLogo.scale-100.png",
+			"sizes": "50x50"
+		},
+		{
+			"src": "windows11/StoreLogo.scale-125.png",
+			"sizes": "63x63"
+		},
+		{
+			"src": "windows11/StoreLogo.scale-150.png",
+			"sizes": "75x75"
+		},
+		{
+			"src": "windows11/StoreLogo.scale-200.png",
+			"sizes": "100x100"
+		},
+		{
+			"src": "windows11/StoreLogo.scale-400.png",
+			"sizes": "200x200"
+		},
+		{
+			"src": "windows11/SplashScreen.scale-100.png",
+			"sizes": "620x300"
+		},
+		{
+			"src": "windows11/SplashScreen.scale-125.png",
+			"sizes": "775x375"
+		},
+		{
+			"src": "windows11/SplashScreen.scale-150.png",
+			"sizes": "930x450"
+		},
+		{
+			"src": "windows11/SplashScreen.scale-200.png",
+			"sizes": "1240x600"
+		},
+		{
+			"src": "windows11/SplashScreen.scale-400.png",
+			"sizes": "2480x1200"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-16.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-20.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-24.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-30.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-32.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-36.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-40.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-44.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-48.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-60.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-64.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-80.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "windows11/Square44x44Logo.targetsize-256.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-16.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-20.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-24.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-30.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-32.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-36.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-40.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-44.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-48.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-60.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-64.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-80.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-unplated_targetsize-256.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-16.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-20.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-24.png",
+			"sizes": "24x24"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-30.png",
+			"sizes": "30x30"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-32.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-36.png",
+			"sizes": "36x36"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-40.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-44.png",
+			"sizes": "44x44"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-48.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-60.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-64.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-80.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "windows11/Square44x44Logo.altform-lightunplated_targetsize-256.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "android/android-launchericon-512-512.png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "android/android-launchericon-192-192.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "android/android-launchericon-144-144.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "android/android-launchericon-96-96.png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "android/android-launchericon-72-72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "android/android-launchericon-48-48.png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "ios/16.png",
+			"sizes": "16x16"
+		},
+		{
+			"src": "ios/20.png",
+			"sizes": "20x20"
+		},
+		{
+			"src": "ios/29.png",
+			"sizes": "29x29"
+		},
+		{
+			"src": "ios/32.png",
+			"sizes": "32x32"
+		},
+		{
+			"src": "ios/40.png",
+			"sizes": "40x40"
+		},
+		{
+			"src": "ios/50.png",
+			"sizes": "50x50"
+		},
+		{
+			"src": "ios/57.png",
+			"sizes": "57x57"
+		},
+		{
+			"src": "ios/58.png",
+			"sizes": "58x58"
+		},
+		{
+			"src": "ios/60.png",
+			"sizes": "60x60"
+		},
+		{
+			"src": "ios/64.png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "ios/72.png",
+			"sizes": "72x72"
+		},
+		{
+			"src": "ios/76.png",
+			"sizes": "76x76"
+		},
+		{
+			"src": "ios/80.png",
+			"sizes": "80x80"
+		},
+		{
+			"src": "ios/87.png",
+			"sizes": "87x87"
+		},
+		{
+			"src": "ios/100.png",
+			"sizes": "100x100"
+		},
+		{
+			"src": "ios/114.png",
+			"sizes": "114x114"
+		},
+		{
+			"src": "ios/120.png",
+			"sizes": "120x120"
+		},
+		{
+			"src": "ios/128.png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "ios/144.png",
+			"sizes": "144x144"
+		},
+		{
+			"src": "ios/152.png",
+			"sizes": "152x152"
+		},
+		{
+			"src": "ios/167.png",
+			"sizes": "167x167"
+		},
+		{
+			"src": "ios/180.png",
+			"sizes": "180x180"
+		},
+		{
+			"src": "ios/192.png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "ios/256.png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "ios/512.png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "ios/1024.png",
+			"sizes": "1024x1024"
+		}
+	]
+}
