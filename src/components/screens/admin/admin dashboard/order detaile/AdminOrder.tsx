@@ -17,7 +17,7 @@ export type TEditOrder = {
 }
 
 const AdminOrder: FC = () => {
-	const { data: globalDate, isLoading } = useGetOrdersQuery(null)
+	const { data: globalDate, isLoading } = useGetOrdersMinQuery(null)
 	const [orders, setOrders] = useState<IOrder[] | undefined>(globalDate)
 	const { data: user } = useGetUserQuery(undefined)
 	const [editOrder, setEditOrder] = useState<TEditOrder>({

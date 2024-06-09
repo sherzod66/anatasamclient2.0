@@ -27,6 +27,17 @@ export const ordersApi = apiSlice.injectEndpoints({
 		getOrders: builder.query<IOrder[], null>({
 			query: () => ({
 				method: 'GET',
+				url: getAllOrders(),
+				headers: {
+					Authorization: `Bearer ${getToken()}`
+				},
+				keepUnusedDataFor: 5
+			}),
+			providesTags: () => [{ type: 'Orders' }]
+		}),
+		getOrdersMin: builder.query<IOrder[], null>({
+			query: () => ({
+				method: 'GET',
 				url: getMinOrders(),
 				headers: {
 					Authorization: `Bearer ${getToken()}`
@@ -127,5 +138,6 @@ export const {
 	useEditOrderMutation,
 	useDeleteInvitationInfoMutation,
 	useChangePriceMutation,
-	useChangePhoneNumberMutation
+	useChangePhoneNumberMutation,
+	useGetOrdersMinQuery
 } = ordersApi

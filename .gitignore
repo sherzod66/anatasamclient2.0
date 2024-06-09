@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+/locales
 
 
 # testing
@@ -35,3 +36,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+sw.js
+sw.js.map
+swe-worker-development.js
+workbox-7144475a.js
+workbox-7144475a.js.map
+

@@ -35,6 +35,7 @@ const ReportFilter: FC<TReportProps> = ({
 	}>({ first: Date.now() - 2592000000, second: Date.now() })
 	useEffect(() => {
 		let copyOrder: IOrder[] = globalOrder ? [...globalOrder] : []
+		console.log(copyOrder)
 		let copyElectronic: IElectronic[] = globalElectronic ? [...globalElectronic] : []
 		const coincidence = copyOrder.filter(
 			order => filterData.first < +order.createdAt && filterData.second > +order.createdAt
